@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Exercise 1</title>
+	</head>
+	<body>
+		<style>
+
+			tr, tfoot, td {
+				border: 1px solid #9f9f9f;
+			}
+
+			td:nth-child(odd) {
+				text-align: right;
+			}
+			
+
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+
+			tfoot .footer {
+				background: #d1ede1;
+				text-align: center;
+			}
+
+		</style>
+		<form method="get">
+			<table>
+				<tr>
+					<td>
+						<label for="last-name">Last Name</label>
+					</td>
+					<td>
+						<input type="text"
+								id="last-name"
+								required="true"
+								placeholder="Nakov"
+								size="50">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="first-name">First Name</label>
+					</td>
+					<td>
+						<input type="text"
+								id="first-name"
+								required="true"
+								placeholder="Svetlin"
+								size="50">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="address">Address</label>
+					</td>
+					<td>
+						<textarea id="address"
+									cols="35"
+									rows="4"
+									placeholder="17 Hristo Botev Str. 
+									floor 3, apt. 12"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="city">City</label>
+					</td>
+					<td>
+						<input type="text"
+								id="city"
+								required="true"
+								placeholder="Kaspichan"
+								size="35">
+						<label for="state">State</label>
+						<input type="text"
+								id="state"
+								required="false"
+								size="5">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="zipcode">Zip/Postal Code</label>
+					</td>
+					<td>
+						<input type="text"
+								id="zipcode"
+								required="true"
+								placeholder="9325"
+								size="10">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="country">Country</label>
+					</td>
+					<td>
+						<select name="country">
+							<option>Bulgaria</option>
+							<option>UK</option>
+							<option>USA</option>
+							<option>Japan</option>
+							<option>Greece</option>
+							<option>Germany</option>
+							<option>Spain</option>
+							<option>France</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="phone">Phone (country code, <br>area code, number)</label>
+					</td>
+					<td>
+						(+<input type="text"
+								id="country-code"
+								required="true"
+								placeholder="359"
+								size="5">)
+						<input type="text"
+								id="area-code"
+								required="true"
+								placeholder="88"
+								size="5">
+						<input type="text"
+								id="number"
+								required="true"
+								placeholder="8334343"
+								size="25">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="email">Email</label>
+					</td>
+					<td>
+						<input type="email"
+								id="email"
+								required="true"
+								placeholder="nakov@kaspichan.org"
+								size="50">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="birth">Birth Date</label>
+					</td>
+					<td>
+						<label for="birth">Month</label>
+						<input type="text"
+								id="month"
+								required="true"
+								placeholder="06"
+								size="1">
+						<label for="state">Day</label>
+						<input type="text"
+								id="day"
+								required="true"
+								placeholder="14"
+								size="1">
+						<label for="state">Year (4 digit)</label>
+						<input type="text"
+								id="year"
+								required="true"
+								placeholder="1980"
+								size="5">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="sex">Gender</label>
+					</td>
+					<td>
+						<select name="sex">
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="date">Starting date</label>
+					</td>
+					<td>
+						<input type="radio"
+								name="date"
+								required="true"
+								checked="true">Spring 2006 
+						<input type="radio"
+								name="date"
+								required="true">Summer 2006
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="comment">Comments/Questions</label>
+					</td>
+					<td>
+						<textarea id="comment"
+									cols="35"
+									rows="5"
+									placeholder="Please send me more information about the lodging."></textarea>
+					</td>
+				</tr>
+				<tfoot class="footer">
+					<td colspan="2" class="footer">
+						<input type="submit" value="Submit">
+						<input type="reset" value="Clear This Form">
+					</td>
+				</tfoot>
+			</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+.clearfix, body header div#header-container, body header nav, body header nav ul, body header nav ul li ul.sub-nav-list, body section, body aside {
+    zoom: 1;
+}
+
+.clearfix:after, body header div#header-container:after, body header nav:after, body header nav ul:after, body header nav ul li ul.sub-nav-list:after, body section:after, body aside:after, .clearfix:before, body header div#header-container:before, body header nav:before, body header nav ul:before, body header nav ul li ul.sub-nav-list:before, body section:before, body aside:before {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix:after, body header div#header-container:after, body header nav:after, body header nav ul:after, body header nav ul li ul.sub-nav-list:after, body section:after, body aside:after {
+	clear: both;
+}
+
+body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
+    display: block;
+}
+
+body {
+	font-size: 14px;
+	font-weight: normal;
+	/*font-family: Arial;*/
+	color: #fff;
+
+	background: #d593ff;
+	background: -moz-linear-gradient(top,  #d593ff 0%, #9215f2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d593ff), color-stop(100%,#9215f2));
+	background: -webkit-linear-gradient(top,  #d593ff 0%,#9215f2 100%);
+	background: -o-linear-gradient(top,  #d593ff 0%,#9215f2 100%);
+	background: -ms-linear-gradient(top,  #d593ff 0%,#9215f2 100%);
+	background: linear-gradient(to bottom,  #d593ff 0%,#9215f2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d593ff', endColorstr='#9215f2',GradientType=0 );
+}
+
+header {
+	padding: 25px 15px 5px 15px;
+} 
+
+#logo-container {
+	float: left;
+	position: relative;
+}
+
+#reg-form-container {
+	float: right;
+	position: relative;
+	top: 50%;
+	right: 5%;
+	text-align: right;
+}
+
+label {
+	font-size: 12px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+input {
+	line-height: 190%;
+	margin-top: 10px;
+	border-radius: 15px;
+	background-color: #b35ef3;
+	border: 1px solid #603382;
+	width: 140px;
+}
+
+button {
+	background-color: #b35ef3;
+	position: relative;
+	right: 65%;
+	text-align: left;
+	color: white;
+	font-size: 14px;
+	padding: 5px 10px 5px 10px;
+	margin-top: 5px;
+	border-radius: 10px;
+	border-right: 1px solid #3c2051;
+	border-bottom: 1px solid #3c2051;
+	border-left: 1px solid rgba(255,255,255,0.5);
+	border-top: 1px solid rgba(255,255,255,0.5);
+}
+

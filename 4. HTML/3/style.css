@@ -1,0 +1,40 @@
+
+body{
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+	background-color: #ccecff;
+	font-family: "Arial";
+	color: #1d3f7a;
+}
+
+ul.menu{
+	list-style-type: none;
+	margin-top: 0;
+	margin-bottom: 30px;
+	padding-left: 0;
+}
+
+ul.menu li{
+	display: inline;
+	margin-right: 70px;
+}
+
+h1{
+	font-style: italic;
+}
+
+.info {
+	margin-left: 20px;
+	font-style: italic;
+	line-height: 0.5;
+}
+
+section {
+	margin-left: 20px;
+	line-height: 1.5;
+}
+
+dt {
+	font-style: italic;
+}
