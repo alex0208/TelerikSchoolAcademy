@@ -33,17 +33,9 @@ html {
 
 body {
 	font-size: 14px;
+	font-family: Arial;
 	font-weight: normal;
 	color: #fff;
-/*
-	background: #d593ff;
-	background: -moz-linear-gradient(top,  #d593ff 0%, #9215f2 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d593ff), color-stop(100%,#9215f2));
-	background: -webkit-linear-gradient(top,  #d593ff 0%,#9215f2 100%);
-	background: -o-linear-gradient(top,  #d593ff 0%,#9215f2 100%);
-	background: -ms-linear-gradient(top,  #d593ff 0%,#9215f2 100%);
-	background: linear-gradient(to bottom,  #d593ff 0%,#9215f2 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d593ff', endColorstr='#9215f2',GradientType=0 );*/
 }
 
 header {
@@ -133,11 +125,13 @@ article {
 article header {
 	padding: 5px;
 }
+
 footer p {
 	font-size: 16px; 
     text-align: right;
     font-weight: normal;
 }
+
 time { 
 	font-family: Consolas;
 } 
