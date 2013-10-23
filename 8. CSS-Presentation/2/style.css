@@ -10,7 +10,7 @@
 }
 
 .clearfix:after, body header div#header-container:after, body header nav:after, body header nav ul:after, body header nav ul li ul.sub-nav-list:after, body section:after, body aside:after {
-	clear: both;
+    clear: both;
 }
 
 body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
@@ -32,70 +32,70 @@ html {
 }
 
 body {
-	font-size: 14px;
-	/*font-family: Arial;*/
-	font-weight: normal;
-	color: #fff;
+    font-size: 14px;
+    /*font-family: Arial;*/
+    font-weight: normal;
+    color: #fff;
 }
 
 header {
-	padding: 25px 15px 5px 15px;
+    padding: 25px 15px 5px 15px;
 } 
 
 #logo-container {
-	float: left;
-	position: relative;
+    float: left;
+    position: relative;
 }
 
 #reg-form-container {
-	float: right;
-	position: relative;
-	top: 50%;
-	right: 5%;
-	text-align: right;
+    float: right;
+    position: relative;
+    top: 50%;
+    right: 5%;
+    text-align: right;
 }
 
 label {
-	font-size: 14px;
-	text-align: right;
-	margin-right: 10px;
+    font-size: 14px;
+    text-align: right;
+    margin-right: 10px;
 }
 
 input {
-	line-height: 190%;
-	margin-top: 10px;
-	border-radius: 15px;
-	background-color: #b35ef3;
-	border: 1px solid #603382;
-	width: 140px;
+    line-height: 190%;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #b35ef3;
+    border: 1px solid #603382;
+    width: 140px;
 }
 
 button {
-	background-color: #b35ef3;
-	position: relative;
-	right: 65%;
-	text-align: left;
-	color: white;
-	font-size: 14px;
-	padding: 5px 10px 5px 10px;
-	margin-top: 5px;
-	border-radius: 10px;
-	border-right: 1px solid #3c2051;
-	border-bottom: 1px solid #3c2051;
-	border-left: 1px solid rgba(255,255,255,0.5);
-	border-top: 1px solid rgba(255,255,255,0.5);
+    background-color: #b35ef3;
+    position: relative;
+    right: 65%;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border-right: 1px solid #3c2051;
+    border-bottom: 1px solid #3c2051;
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.5);
 }
 
 ul {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 li {
-	display: inline-block;
+    display: inline-block;
 }
 
 nav  {
-	width: 75%; 
+    width: 75%; 
     border: 1px solid black; 
     border-radius: 15px; 
     padding: 12px; 
@@ -103,15 +103,15 @@ nav  {
 }
 
 .sub-nav-list {
-	display: none;
+    display: none;
 }
 
 #main-nav-list li a {
-	text-decoration: none;
-	color: white;
-	padding: 0px 10px;
-	font-size: 18px;
-	/*font: 20px normal Arial;*/
+    text-decoration: none;
+    color: white;
+    padding: 0px 10px;
+    font-size: 18px;
+    /*font: 20px normal Arial;*/
 }
 
 section { 
@@ -120,55 +120,55 @@ section {
 } 
 
 article {
-	/*width: 70%;*/
-	border: 1px solid black;
-	border-radius: 15px;
-	padding: 20px;
-	color: white;
-	margin: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px 20px 0px 20px;
+    color: white;
+    margin: 20px;
 }
 
 article header {
-	padding: 5px;
+    padding: 5px;
 }
-footer {
-	padding: 5px;
+article footer {
+    padding: 5px;
 }
-footer p {
-	font-size: 16px; 
+article footer p {
+    font-size: 14px; 
     text-align: right;
     font-weight: normal;
 }
 
 a {
-	color: rgba(255,255,255,0.5);
-	text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
 
 }
 
 time { 
-	font-family: Consolas;
+    font-family: Consolas;
 }
 
 aside {
-	float: left;
-	width: 20%; 
-	margin:	 20px;	
+
+    float: left;
+    width: 22%; 
+    margin:  20px;  
 }
 
 aside > ul > li {
-	width: 75%; 
+    width: 80%; 
     border: 1px solid black; 
     border-radius: 5px; 
     padding: 12px; 
-    margin: 20px
+    margin: 10px 10px 5px 10px;
 
 }
 
 h2 {
-	font-size: 1.1em;
-	font-weight: normal;
-	padding-bottom: 10px
+    font-size: 1.1em;
+    font-weight: normal;
+    padding-bottom: 10px
 }
 
 aside > ul > li p { 
@@ -177,11 +177,28 @@ aside > ul > li p {
     margin-bottom: 10px; 
     margin-left: 5px; 
     font-size: 14px; 
+    width: 100%;
 }
 
 aside > ul > li > ul > li{
-	background: url('images/li-dot.png');
-	background-repeat: no-repeat;
-	background-position: 10px 10px;
-	padding-left: 50px;
+    background: url('images/li-dot.png');
+    background-repeat: no-repeat;
+    background-position: 5% 10%; 
+    padding-left: 40px;
+    display: block;
+    margin: 5px 10px 0 0;
+}
+
+body footer { 
+    clear: both; 
+    padding-top: 15px; 
+    padding-bottom: 25px; 
+    padding-right: 0px; 
+    padding-left: 0px; 
+} 
+  
+body > footer p { 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-align: center;
 }
