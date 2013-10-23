@@ -6,4 +6,17 @@ body {
 
 td {
 	border: 1px solid black;
-}	
+}
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+ul li {
+	display: inline-block;
+}
+
+input[type=text] {
+	width: 99%;
+}
