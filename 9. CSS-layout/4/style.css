@@ -54,7 +54,7 @@
             height: 20px;
             vertical-align: text-bottom;
         }
-        .icon-home { background: url(png.png); }
+        .icon-home { background: url(images/home.png); }
 
         /* LISTS */
         .unstyled { list-style: none; }
