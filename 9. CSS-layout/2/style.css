@@ -1,0 +1,22 @@
+/*body {
+	height: 538px;
+	width: 419px;
+
+	background-color: #cccccc;
+}*/
+
+body {
+	padding: 0;
+	margin: 0;
+	font: 10px Arial, sans-serif;	
+}
+
+h1 {
+	font-weight: lighter;
+}
+
+article {
+	height: 538px;
+	width: 419px;
+	background-color: #cccccc;
+}
