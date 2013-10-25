@@ -1,5 +1,6 @@
 body {
 	background: #1e3741;
+	font-family: Arial, Trebuchet MS, tahoma, Verdana, Sans-Serif;
 }
 
 ul {
@@ -8,32 +9,64 @@ ul {
 }
 
 li {
-	padding: 5px;
+	padding: 4px 0;
+	font-size: 1em;
 	border-top: 1px solid #3a4f58;
-	width: 250px;
+	width: 242px;
+	font-size: 12px;
+
 }
 
 div {
 	width:592px;
-	float: right;
 }
 
 img {
+	width: 350px;
 	float: right;
 }
 
 nav ul li {
-	display: inline-block;
+	display: inline;
 	background: #4b5f67;
 	border: none;
+	font-size: 11px;
 	width: auto;
+	padding: 8px 12px;
+	margin: 0 1px 0 0;
+}
+
+a {
+	text-decoration: none;
+	color: #a5afb3;
+
+}
+
+aside a {
+	color: #a5afb3;
+	font-weight: bold;
+	display: block;
+	padding: 5px 10px;
+	font-size: 13px;
+	
 }
 
 nav ul li a {
 	color: #87a6b0;
 }
 
-a {
-	text-decoration: none;
-	color: #a5afb3;
+#checked {
+	background-color:#1e3741;
 }
+#checked a {
+	color: white;
+}
+
+aside ul li:hover {
+	background-color:#00968c;
+}
+
+nav ul li:hover a, aside ul li:hover a {
+	color:white;
+}
+
