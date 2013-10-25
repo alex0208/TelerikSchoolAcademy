@@ -1,0 +1,70 @@
+body{
+	font-family: Corbel;
+	font-weight: bold;
+}
+
+nav{
+	padding-left: 70px;
+}
+
+hr{
+	height: 2px;
+	color: gray;
+	background-color: gray;
+	border:  0px solid black;
+}
+
+ul{
+	list-style:none;
+}
+
+ul li{
+	display: block;
+   	position: relative;
+  	float: left;
+}
+
+ul li a{
+	padding: 2px;
+	font-size: 24px;
+	color: #0ac1fc;
+}
+
+#laptops-list{
+	float: left;
+	margin-right: 50px;
+	padding: 2px 5px 7px 2px;
+	border: 2px solid gray;
+}
+
+p{
+	margin: 10px 0 10px 0;
+}
+
+fieldset{
+	border: 2px solid gray;
+}
+
+.info{
+	float: left;
+	width: auto;
+	height: auto;
+}
+
+.macbook-image{
+	width: 80px;
+	height: 55px;
+	margin-bottom: 12px;
+	background: url("images/macbook.png");
+	background-repeat: no-repeat;
+	background-size: 80px 55px;
+}
+
+#specifications{
+	padding-top: 40px;
+}
+
+#specifications p{
+	font-size: 1.3em;
+	padding: 6px 0 6px 0;
+}
