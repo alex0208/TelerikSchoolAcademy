@@ -1,7 +1,7 @@
-body{
+body {
 	font-family: Corbel;
-	font-weight: bold;
-}
+	font-size: 18px;
+ }
 
 nav{
 	padding-left: 70px;
@@ -15,7 +15,7 @@ hr{
 }
 
 ul{
-	list-style:none;
+	list-style: none;
 }
 
 ul li{
@@ -28,6 +28,7 @@ ul li a{
 	padding: 2px;
 	font-size: 24px;
 	color: #0ac1fc;
+	font-family: Arial;
 }
 
 #laptops-list{
@@ -55,16 +56,16 @@ fieldset{
 	width: 80px;
 	height: 55px;
 	margin-bottom: 12px;
-	background: url("images/macbook.png");
+	background: url("macbook-air.jpg");
 	background-repeat: no-repeat;
 	background-size: 80px 55px;
 }
 
 #specifications{
-	padding-top: 40px;
+	padding-top: 80px;
 }
 
-#specifications p{
+#specifications div{
 	font-size: 1.3em;
 	padding: 6px 0 6px 0;
 }

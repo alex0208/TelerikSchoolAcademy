@@ -1,8 +1,10 @@
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Exercise 5</title>
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    </head>
 		<nav>
 	        <ul>
 	            <li><a href="www.apple.com/bg/‎">Apple</a></li>
@@ -100,20 +102,40 @@
     	</div>
     	<div id="specifications">
     		<div>
-    			<p>Min price: 500 USD</p>
-    			<input type="range" min="0" max="1000" step="100" value = "500">
+    			Min price: <span id="min_price">500</span> USD<br>
+                <input type="range"
+                        min="0"
+                        max="1000"
+                        value="500"
+                        step="50"
+                        onchange="getElementById('min_price').innerHTML=this.value" />
     		</div>
     		<div>
-    			<p>Max price: 1500 USD</p>
-    			<input type="range" min="0" max="3000" step="100" value = "1500">
+    			Max price: <span id="max_price">1500</span> USD<br>
+                <input type="range"
+                        min="1000"
+                        max="2000"
+                        value="1500"
+                        step="50"
+                        onchange="getElementById('max_price').innerHTML=this.value" />
     		</div>
     		<div>
-    			<p>Min RAM: 4GB</p>
-    			<input type="range" min="0" max="8" step="1" value = "4">
+                Min RAM: <span id="min_memory">4</span> GB<br>
+                <input type="range"
+                        min="1"
+                        max="8"
+                        value="4"
+                        step="1"
+                        onchange="getElementById('min_memory').innerHTML=this.value" />
     		</div>
     		<div>
-    			<p>Max RAM: 16GB</p>
-    			<input type="range" min="0" max="32" step="1" value = "16">
+                Max RAM: <span id="max_memory">16</span> GB<br>
+                <input type="range"
+                        min="2"
+                        max="32"
+                        value="16"
+                        step="2"
+                        onchange="getElementById('max_memory').innerHTML=this.value" />
     		</div>
     	</div>
 	</body>
