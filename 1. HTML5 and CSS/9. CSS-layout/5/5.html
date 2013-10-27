@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Exercise 5</title>
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    </head>
+		<nav>
+	        <ul>
+	            <li><a href="www.apple.com/bg/‎">Apple</a></li>
+	            <li><a href="www.toshiba.bg/‎">Toshiba</a></li>
+	            <li><a href="www.lenovo.com/bg/bg/">Lenovo</a></li>
+	            <li><a href="www.dell.com/">Dell</a></li>
+	            <li><a href="www.asus.com/">Asus</a></li>
+	            <li><a href="www.acer.com/worldwide/selection.html">Hacer</a></li>
+	            <li><a href="www8.hp.com/bg/bg/home.html">HP</a></li>
+	        </ul>
+    	</nav>
+    	<br>
+    	<br>
+    	<hr/>
+    	<div id="laptop-models">
+    		<ul id="laptops-list">
+    			<li>
+    				<fieldset>
+    					<legend>Apple MacBook Air</legend>
+    					<div class="info">
+    						<div class="macbook-image"></div>
+    						<p>1300 USD</p>
+    					</div>
+    					<div class="info">
+    						<p>64GB SSD</p>
+    						<p>2GB DDR</p>
+    						<p>Intel Core i5</p>
+    					</div>
+    				</fieldset>
+    				<fieldset>
+    					<legend>Apple MacBook Air</legend>
+    					<div class="info">
+    						<div class="macbook-image"></div>
+    						<p>1300 USD</p>
+    					</div>
+    					<div class="info">
+    						<p>64GB SSD</p>
+    						<p>2GB DDR</p>
+    						<p>Intel Core i5</p>
+    					</div>
+    				</fieldset>
+    				<fieldset>
+    					<legend>Apple MacBook Air</legend>
+    					<div class="info">
+    						<div class="macbook-image"></div>
+    						<p>1300 USD</p>
+    					</div>
+    					<div class="info">
+    						<p>64GB SSD</p>
+    						<p>2GB DDR</p>
+    						<p>Intel Core i5</p>
+    					</div>
+    				</fieldset>
+    			</li>
+    			<li>
+    				<fieldset>
+    					<legend>Apple MacBook Air</legend>
+    					<div class="info">
+    						<div class="macbook-image"></div>
+    						<p>1300 USD</p>
+    					</div>
+    					<div class="info">
+    						<p>64GB SSD</p>
+    						<p>2GB DDR</p>
+    						<p>Intel Core i5</p>
+    					</div>
+    				</fieldset>
+    				<fieldset>
+    					<legend>Apple MacBook Air</legend>
+    					<div class="info">
+    						<div class="macbook-image"></div>
+    						<p>1300 USD</p>
+    					</div>
+    					<div class="info">
+    						<p>64GB SSD</p>
+    						<p>2GB DDR</p>
+    						<p>Intel Core i5</p>
+    					</div>
+    				</fieldset>
+    				<fieldset>
+    					<legend>Apple MacBook Air</legend>
+    					<div class="info">
+    						<div class="macbook-image"></div>
+    						<p>1300 USD</p>
+    					</div>
+    					<div class="info">
+    						<p>64GB SSD</p>
+    						<p>2GB DDR</p>
+    						<p>Intel Core i5</p>
+    					</div>
+    				</fieldset>
+    			</li>
+
+    		</ul>
+    	</div>
+    	<div id="specifications">
+    		<div>
+    			Min price: <span id="min_price">500</span> USD<br>
+                <input type="range"
+                        min="0"
+                        max="1000"
+                        value="500"
+                        step="50"
+                        onchange="getElementById('min_price').innerHTML=this.value" />
+    		</div>
+    		<div>
+    			Max price: <span id="max_price">1500</span> USD<br>
+                <input type="range"
+                        min="1000"
+                        max="2000"
+                        value="1500"
+                        step="50"
+                        onchange="getElementById('max_price').innerHTML=this.value" />
+    		</div>
+    		<div>
+                Min RAM: <span id="min_memory">4</span> GB<br>
+                <input type="range"
+                        min="1"
+                        max="8"
+                        value="4"
+                        step="1"
+                        onchange="getElementById('min_memory').innerHTML=this.value" />
+    		</div>
+    		<div>
+                Max RAM: <span id="max_memory">16</span> GB<br>
+                <input type="range"
+                        min="2"
+                        max="32"
+                        value="16"
+                        step="2"
+                        onchange="getElementById('max_memory').innerHTML=this.value" />
+    		</div>
+    	</div>
+	</body>
+</html>

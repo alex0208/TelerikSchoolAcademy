@@ -1,0 +1,19 @@
+ul{
+	list-style: none;
+}
+
+li ul{
+	display: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+li:hover > ul{
+	display: block;
+}
+
+.sublist-item{
+	color: gray;
+}
