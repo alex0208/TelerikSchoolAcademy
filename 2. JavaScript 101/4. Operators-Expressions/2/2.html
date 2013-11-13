@@ -3,18 +3,18 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="../styles/js-console.css" rel="stylesheet" />
-	<title>Exercise 1</title>
+	<title>Exercise 2</title>
 </head>
 	<label for="inputNumber">Enter a number</label>
     <input type="text" id="inputNumber">
-    <button onclick="onClickCheckIfEven()">Check</button>
+    <button onclick="onClickCheckDevision()">Check</button>
     <br><br>
     <div id="js-console"></div>
     <script src="../js-console/js-console.js"></script>
     <script>
-        function onClickCheckIfEven() {
+        function onClickCheckDevision() {
             var input = jsConsole.readInteger("#inputNumber");
-            jsConsole.writeLine("The number " + input + " is " + (input % 2 == 0?"even!" : "odd!"));
+            jsConsole.writeLine("The number " + input + (input % 35 == 0? " can " : " cannot ") + "be devided by 5 and 7 in the same time");
         }
     </script>
 </body>
