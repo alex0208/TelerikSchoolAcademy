@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+
+	<title>Exercise 1</title>
+</head>
+	<label for="inputNumber">Enter a number</label>
+    <input type="text" id="inputNumber">
+    <button onclick="onClickCheckIfEven()">Check</button>
+    <br /><br />
+    <div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script>
+        function onClickCheckIfEven() {
+            var number = jsConsole.readInteger("#inputNumber");
+            jsConsole.writeLine("The number " + number + " is " + (number % 2 == 0?"even!" : "odd!"));
+        }
+    </script>
+</body>
+</html>
+
+
