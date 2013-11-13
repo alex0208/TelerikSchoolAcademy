@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+	<title>Exercise 3</title>
+</head>
+    <label for="width">Enter a width</label>
+    <input type="text" id="width">
+    <br>
+	<label for="height">Enter a height</label>
+    <input type="text" id="height">
+    <br>
+    <button onclick="onClickCalculateArea()">Check</button>
+    <br><br>
+    <div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script>
+        function onClickCalculateArea() {
+            var width = jsConsole.readInteger("#width");
+            var height = jsConsole.readInteger("#height");
+            jsConsole.writeLine("A rectangle with height " + height + " and width " + width + " has area " + height * width);
+        }
+    </script>
+</body>
+</html>
