@@ -7,12 +7,12 @@
 </head>
     <label for="inputNumber">Enter a number</label>
     <input type="text" id="inputNumber">
-    <button onclick="onClickCheckThirdDigit()">Check</button>
+    <button onclick="onClickCheckThirdBit()">Check</button>
     <br><br>
     <div id="js-console"></div>
     <script src="js-console/js-console.js"></script>
     <script>
-        function onClickCheckThirdDigit() {
+        function onClickCheckThirdBit() {
             var input = jsConsole.readInteger("#inputNumber");
             var mask = 1 << 3;
             var result = input & mask;
