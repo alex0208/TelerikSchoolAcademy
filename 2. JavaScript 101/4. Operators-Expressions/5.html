@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 5</title>
+</head>
+    <label for="inputNumber">Enter a number</label>
+    <input type="text" id="inputNumber">
+    <button onclick="onClickCheckThirdDigit()">Check</button>
+    <br><br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function onClickCheckThirdDigit() {
+            var input = jsConsole.readInteger("#inputNumber");
+            var mask = 1 << 3;
+            var result = input & mask;
+            jsConsole.writeLine("The third bit of " + input + " is " + (result >> 3));
+        }
+    </script>
+</body>
+</html>
+
+
