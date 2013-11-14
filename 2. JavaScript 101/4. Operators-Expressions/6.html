@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+	<title>Exercise 6</title>
+</head>
+    <label for="width">Enter coordinates x</label>
+    <input type="text" id="positionX">
+    <br>
+	<label for="height">Enter coordinates y</label>
+    <input type="text" id="positionY">
+    <br>
+    <button onclick="onClickCheckLocation()">Check</button>
+    <br><br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function onClickCheckLocation() {
+            var positionX = jsConsole.readInteger("#positionX");
+            var positionY = jsConsole.readInteger("#positionY");
+            jsConsole.writeLine("A point with coordinates (" + positionX + "," + positionY + ")" + 
+            (positionX * positionX + positionY * positionY < 25 ? " is " : " is not ") + "in a circle K(0,5)");
+
+        }
+    </script>
+</body>
+</html>
