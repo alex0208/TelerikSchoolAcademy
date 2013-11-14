@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+	<title>Exercise 8</title>
+</head>
+    <label for="sideA">Enter side A</label>
+    <input type="text" id="sideA">
+    <br>
+    <label for="sideB">Enter side B</label>
+    <input type="text" id="sideB">
+    <br>
+	<label for="height">Enter height</label>
+    <input type="text" id="height">
+    <br>
+    <button onclick="onClickCalculateTrapezoidArea()">Check</button>
+    <br><br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function onClickCalculateTrapezoidArea() {
+            var sideA = jsConsole.readInteger("#sideA");
+            var sideB = jsConsole.readInteger("#sideB ");
+            var height = jsConsole.readInteger("#height");
+            jsConsole.writeLine("A rectangle with sides " + sideA + " and " + sideB + " and height "
+            + height + " has area " + (sideA + sideB) * height / 2);
+        }
+    </script>
+</body>
+</html>
