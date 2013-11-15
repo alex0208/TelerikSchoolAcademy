@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+	<title>Exercise 2</title>
+</head>
+    <button onclick="onClickPrintArray()">Print array</button>
+    <br><br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function onClickPrintArray () {
+            var arr = new Array(20);
+            for (var i = 0; i < arr.length; i++)
+                arr[i] = i * 5;
+            jsConsole.writeLine(arr.join(", "))
+        }
+    </script>
+</body>
+</html>
