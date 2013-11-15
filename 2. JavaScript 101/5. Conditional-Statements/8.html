@@ -1,0 +1,185 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 8</title>
+</head>
+<body>
+    <label for="number">Enter a number</label>
+    <input type="text" id="number">
+    <br>
+    <button onclick="numberToWords()">Check</button>
+    <br>
+    <br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function numberToWords() {
+            var number = jsConsole.readInteger("#number");
+            var digits = numberToDigits(number);
+            var result;
+            switch (digits[0]) {
+                case 0:
+                    result = "Zero";
+                    break;
+                case 1:
+                    result = "one";
+                    break;
+                case 2:
+                    result = "two";
+                    break;
+                case 3:
+                    result = "three";
+                    break;
+                case 4:
+                    result = "four";
+                    break;
+                case 5:
+                    result = "five";
+                    break;
+                case 6:
+                    result = "six";
+                    break;
+                case 7:
+                    result = "seven";
+                    break;
+                case 8:
+                    result = "eigth";
+                    break;
+                case 9:
+                    result = "nine";
+                    break;
+                default:
+                    result = "Something went wrong!";
+                    break;
+            }
+            switch (digits[1]) {
+                case 0:
+                    break;
+                case 1:
+                    switch (result) {
+                        case "Zero":
+                            result = "Ten";
+                            break;
+                        case "one":
+                            result = "Eleven";
+                            break;
+                        case "two":
+                            result = "Twelve";
+                            break;
+                        case "three":
+                            result = "Thirteen";
+                            break;
+                        case "four":
+                            result = "Fourteen";
+                            break;
+                        case "five":
+                            result = "Fifteen";
+                            break;
+                        case "six":
+                            result = "Sixteen";
+                            break;
+                        case "seven":
+                            result = "Seventeen";
+                            break;
+                        case "eight":
+                            result = "Ten";
+                            break;
+                        case "nine":
+                            result = "Nineteen";
+                            break;
+                    }
+                    break;
+                case 2:
+                    if (result == "Zero") result = "twenty";
+                    else result = "twenty " + result;
+                    break;
+                case 3:
+                    if (result == "Zero") result = "thirty";
+                    else result = "thirty " + result;
+                    break;
+                case 4:
+                    if (result == "Zero") result = "forty";
+                    else result = "forty " + result;
+                    break;
+                case 5:
+                    if (result == "Zero") result = "fifty";
+                    else result = "fifty " + result;
+                    break;
+                case 6:
+                    if (result == "Zero") result = "sixty";
+                    else result = "sixty " + result;
+                    break;
+                case 7:
+                    if (result == "Zero") result = "seventy";
+                    else result = "seventy " + result;
+                    break;
+                case 8:
+                    if (result == "Zero") result = "eighty";
+                    else result = "eighty " + result;
+                    break;
+                case 9:
+                    if (result == "Zero") result = "ninety";
+                    else result = "ninety " + result;
+                    break;
+                default:
+                    result = "Something went wrong!";
+                    break;
+            }
+            switch (digits[2]) {
+                case 0:
+                    break;
+                case 1:
+                    if (result == "Zero") result = "One hundred";
+                    else result = "One hundred and " + result;
+                    break;
+                case 2:
+                    if (result == "00") result = "Two hundred";
+                    else result = "Two hundred and " + result;
+                    break;
+                case 3:
+                    if (result == "00") result = "Three hundred";
+                    else result = "Three hundred and " + result;
+                    break;
+                case 4:
+                    if (result == "00") result = "Four hundred";
+                    else result = "Four hundred and " + result;
+                    break;
+                case 5:
+                    if (result == "00") result = "Five hundred";
+                    else result = "Five hundred and " + result;
+                    break;
+                case 6:
+                    if (result == "00") result = "Six hundred";
+                    else result = "Six hundred and " + result;
+                    break;
+                case 7:
+                    if (result == "00") result = "Seven hundred";
+                    else result = "Seven hundred and " + result;
+                    break;
+                case 8:
+                    if (result == "00") result = "Eight hundred";
+                    else result = "Eight hundred and " + result;
+                    break;
+                case 9:
+                    if (result == "00") result = "Ninehundred";
+                    else result = "Nine hundred and " + result;
+                    break;
+            }
+            jsConsole.writeLine(result);
+        }
+
+
+        function numberToDigits(number) {
+            var digits = [0, 0, 0];
+            var i = 0;
+            while (number >= 1) {
+                digits[i++] = (number | 0) % 10;
+                number /= 10;
+            }
+            return digits;
+        }
+    </script>
+</body>
+</html>
