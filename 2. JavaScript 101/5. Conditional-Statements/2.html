@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+	<title>Exercise 2</title>
+</head>
+    <label for="firstNumber">Enter the first number</label>
+    <input type="text" id="firstNumber"> <br>
+    <label for="secondNumber">Enter the second number</label>
+    <input type="text" id="secondNumber"> <br>
+   	<label for="thirdNumber">Enter the third number</label>
+    <input type="text" id="thirdNumber"> <br>
+    <button onclick="onClickCheckSign()">Check</button>
+    <br><br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function onClickCheckSign() {
+            var numbers = new Array(); 
+            var counter = 0;
+            numbers[0] = jsConsole.readInteger("#firstNumber");       
+            numbers[1] = jsConsole.readInteger("#secondNumber");
+            numbers[2] = jsConsole.readInteger("#thirdNumber");
+            for (var num in numbers) {
+                if (numbers[num] < 0) counter+=1;
+            }
+            jsConsole.writeLine("The sign of the equation is " + (counter % 2 == 0 ? "+" : "-"))
+        }
+    </script>
+</body>
+</html>
