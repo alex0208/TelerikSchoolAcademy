@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 3</title>
+</head>
+<body>
+    <label for="first">First number:</label>
+    <input type="text" id="first">
+    <br>
+    <label for="second">Second number:</label>
+    <input type="text" id="second">
+    <br>
+    <label for="third">Third number:</label>
+    <input type="text" id="third">
+    <br>
+    <button onclick="findBiggest()">Check</button>
+    <br>
+    <br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function findBiggest() {
+            var first = jsConsole.readInteger("#first");
+            var second = jsConsole.readInteger("#second");
+            var third = jsConsole.readInteger("#third");
+            var biggest = 0;
+
+            if (first > second) {
+                if (first > third) biggest = first;
+                else biggest = third;
+            }
+            else
+            {
+                if (second > third) biggest = second;
+                else biggest = third;
+            }
+
+            jsConsole.writeLine("The biggest of the numbers is " + biggest);
+        }
+    </script>
+</body>
+</html>
