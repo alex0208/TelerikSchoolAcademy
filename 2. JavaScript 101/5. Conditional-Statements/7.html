@@ -1,30 +1,38 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="styles/js-console.css" rel="stylesheet" />
-	<title>Exercise 7</title>
+    <title>Exercise 7</title>
 </head>
-	<label for="inputNumber">Enter a number</label>
-    <input type="text" id="inputNumber">
-    <button onclick="onClickCheckIfPrime()">Check</button>
+    <label for="firstNumber">Enter the first number</label>
+    <input type="text" id="firstNumber"> <br>
+    <label for="secondNumber">Enter the second number</label>
+    <input type="text" id="secondNumber"> <br>
+    <label for="thirdNumber">Enter the third number</label>
+    <input type="text" id="thirdNumber"> <br>
+    <label for="fourthNumber">Enter the fourth number</label>
+    <input type="text" id="fourthNumber"> <br>
+    <label for="fifthNumber">Enter the fifth number</label>
+    <input type="text" id="fifthNumber"> <br>
+    <button onclick="onClickFindBiggestNumber()">Check</button>
     <br><br>
     <div id="js-console"></div>
     <script src="js-console/js-console.js"></script>
     <script>
-        function onClickCheckIfPrime() {
-            var input = jsConsole.readInteger("#inputNumber");
-            var prime = true;
-            for (var i = 2; i <= parseInt(Math.sqrt(input)); i++) {
-                if (input % i == 0) {
-                    prime = false;
-                    break;
-                };
-            };
-            jsConsole.writeLine("The number " + input + (prime ? " is " : " is not ") + "prime");
+        function onClickFindBiggestNumber() {
+            var numbers = new Array(); 
+            numbers[0] = jsConsole.readInteger("#firstNumber");       
+            numbers[1] = jsConsole.readInteger("#secondNumber");
+            numbers[2] = jsConsole.readInteger("#thirdNumber");
+            numbers[3] = jsConsole.readInteger("#fourthNumber");
+            numbers[4] = jsConsole.readInteger("#fifthNumber");
+            var biggestNumber = numbers[0];
+            for (var num in numbers) {
+                if (numbers[num] > biggestNumber) biggestNumber = numbers[num];
+            }
+            jsConsole.writeLine("The biggest number is " + biggestNumber);
         }
     </script>
 </body>
 </html>
-
-

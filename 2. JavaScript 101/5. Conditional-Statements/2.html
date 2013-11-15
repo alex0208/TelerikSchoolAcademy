@@ -5,19 +5,28 @@
     <link href="styles/js-console.css" rel="stylesheet" />
 	<title>Exercise 2</title>
 </head>
-	<label for="inputNumber">Enter a number</label>
-    <input type="text" id="inputNumber">
-    <button onclick="onClickCheckDevision()">Check</button>
+    <label for="firstNumber">Enter the first number</label>
+    <input type="text" id="firstNumber"> <br>
+    <label for="secondNumber">Enter the second number</label>
+    <input type="text" id="secondNumber"> <br>
+   	<label for="thirdNumber">Enter the third number</label>
+    <input type="text" id="thirdNumber"> <br>
+    <button onclick="onClickCheckSign()">Check</button>
     <br><br>
     <div id="js-console"></div>
     <script src="js-console/js-console.js"></script>
     <script>
-        function onClickCheckDevision() {
-            var input = jsConsole.readInteger("#inputNumber");
-            jsConsole.writeLine("The number " + input + (input % 35 == 0? " can " : " cannot ") + "be devided by 5 and 7 in the same time");
+        function onClickCheckSign() {
+            var numbers = new Array(); 
+            var counter = 0;
+            numbers[0] = jsConsole.readInteger("#firstNumber");       
+            numbers[1] = jsConsole.readInteger("#secondNumber");
+            numbers[2] = jsConsole.readInteger("#thirdNumber");
+            for (var num in numbers) {
+                if (numbers[num] < 0) counter+=1;
+            }
+            jsConsole.writeLine("The sign of the equation is " + (counter % 2 == 0 ? "+" : "-"))
         }
     </script>
 </body>
 </html>
-
-
