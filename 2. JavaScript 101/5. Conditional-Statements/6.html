@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+	<title>Exercise 2</title>
+</head>
+    <label for="a">Enter a</label>
+    <input type="text" id="a"> <br>
+    <label for="b">Enter b</label>
+    <input type="text" id="b"> <br>
+   	<label for="c">Enter c</label>
+    <input type="text" id="c"> <br>
+    <button onclick="onClickSolveEquation()">Check</button>
+    <br><br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function onClickSolveEquation() {
+            var a = jsConsole.readInteger("#a");       
+            var b = jsConsole.readInteger("#b");
+            var c = jsConsole.readInteger("#c");
+            var determinant;
+            var x1;
+            var x2;
+            if (a != 0) {
+                determinant = b * b - 4 * a * c;
+                if (determinant > 0) {
+                    x1 = (-b + Math.sqrt(determinant)) / 2 * a;
+                    x2 = (-b - Math.sqrt(determinant)) / 2 * a;
+                    jsConsole.writeLine("x1= " + x1 + ";  x2= " + x2)
+                }
+                else if (determinant == 0) {
+                    x1 = -b / 2 * a;
+                    jsConsole.writeLine("x1 = x2 = " + x1)
+
+                }
+                else {
+                    jsConsole.writeLine("There are no real roots")
+                }
+            };            
+        }
+    </script>
+</body>
+</html>
