@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 2</title>
+</head>
+<body>
+    <label for="firstCharArray">Enter sequence of characters separated by spaces</label>
+    <input type="text" id="firstCharArray">
+    <br>
+    <label for="secondCharArray">Enter another sequence of characters separated by spaces</label>
+    <input type="text" id="secondCharArray">
+    <br>
+    <button onclick="compareCharArrays()">Compare lexicographically</button>
+    <br>
+    <br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function compareCharArrays() {
+            var first = readCharArray('#firstCharArray');
+            var second = readCharArray('#secondCharArray');
+            var counter = 0;
+            for (var i in first) {
+                if (first[i] === second[i]) { counter++;}
+                else if (first[i] > second[i]) {
+                    jsConsole.writeLine("first > second");
+                    break;
+                }
+                else if (first[i] < second[i]) {
+                    jsConsole.writeLine("first < second");
+                    break;
+                }
+            }
+            if (counter == first.length && first.length == second.length) jsConsole.writeLine("first = second");
+            else if (counter == second.length && first.length > second.length) jsConsole.writeLine("first > second");
+            else if (counter == first.length && first.length < second.length) jsConsole.writeLine("first < second");
+        }
+
+        function readCharArray(inputSelector) {
+            var text = jsConsole.read(inputSelector);
+            return text.split(" ");
+        }
+    </script>
+</body>
+</html>
+
+
