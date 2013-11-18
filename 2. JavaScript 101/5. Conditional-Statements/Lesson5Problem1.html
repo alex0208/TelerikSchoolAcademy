@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+
+</head>
+
+<body>
+
+<script type = "text/javascript">
+
+function SolveQuadric()
+{
+
+	var a, b, c;
+	var x1,x2;
+	
+	a = document.getElementById("abox").value;
+	b = document.getElementById("bbox").value;
+	c = document.getElementById("cbox").value;
+	
+	var D = (b*b) - 4 * a * c;
+	
+	if ( a == 0 )
+	{
+		x1 = -c / b;
+		x2 = "Not a quadric equation!";
+		
+		document.getElementById("Solution1").innerHTML = x1;
+		document.getElementById("Solution2").innerHTML = x2;
+		
+		return;
+	}
+	
+	if ( D > 0 )
+	{
+		x1 = -b + Math.sqrt(D);
+		x2 = -b - Math.sqrt(D);
+		x1 /= (2 * a);
+		x2 /= (2 * a);
+		
+	}
+	
+	else if ( D == 0 )
+	{
+		x1 = -b / (2 * a);
+		x2 = x1;
+	}
+	
+	else if ( D < 0 )
+	{
+		document.getElementById("Solution1").innerHTML = "Equation has no real roots!";
+		document.getElementById("Solution2").innerHTML = "";
+		return;
+	}
+	
+	document.getElementById("Solution1").innerHTML = x1;
+	document.getElementById("Solution2").innerHTML = x2;
+	
+	return;
+	
+};
+
+</script>
+
+<form action = "EquationForm.asp" autocomplete = "on">
+
+a: <input id = "abox" value = "0">
+
+<br/>
+
+b: <input id = "bbox" value = "0">
+
+<br/>
+
+c: <input id = "cbox" value = "0">
+
+<br/>
+
+<button type = "button" onclick = "SolveQuadric()"> Solve! </button>
+
+<p>
+Roots of Equation: 
+<p id = "Solution1"> </p> <p id = "Solution2"> </p>
+</p>
+
+</form>
+
+</body>
+
+</html>
