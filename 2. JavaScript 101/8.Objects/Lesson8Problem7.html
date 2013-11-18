@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+
+</head>
+
+<body>
+
+<script >
+
+var arr = new Array();
+
+function FindBigger()
+{
+
+	console.log(typeof(arr[0]));
+
+	for ( var i = 2; i < arr.length; i ++ )
+	{
+	
+		console.log( "i: " + arr[i] );
+		console.log( "i - 1: " + arr[i - 1] );
+		console.log( "i - 2: " + arr[i - 2] );
+		
+		if ( arr[i - 1] > arr[i] && arr[i - 1] > arr[i - 2] )
+		{
+			console.log("INDEX:");
+			console.log(i - 1);
+			
+			document.getElementById("indexBigger").innerHTML = i - 1;
+			
+			return;
+		}
+	}
+	
+	document.getElementById("indexBigger").innerHTML = -1;
+	console.log(-1);
+	return;
+
+}
+
+function GetArray()
+{
+
+	var inputString = document.getElementById("array").value;
+	
+	arr = inputString.split(" ");
+	
+	for (var i in arr)
+	{
+		arr[i] = parseInt(arr[i]);
+	}
+	
+	FindBigger();
+	
+	return;
+	
+}
+
+</script>
+
+<form action = "Bigger.asp" autocomplete = "on">
+
+Enter Array: <input id = "array" value = "">
+
+<br/>
+
+<button type = "button" onclick = "GetArray()"> Find Bigger  </button>
+
+<p>
+
+<p id = "indexBigger" > </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>

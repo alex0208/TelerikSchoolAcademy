@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+
+</head>
+
+<body>
+
+<script >
+
+var inputString;
+var arr;
+
+function FindSequence()
+{
+	
+	var sequence = new Array();
+	var	maxsequence = new Array();
+	
+	var maxlength = 1;
+	
+	sequence.push(arr[0]);
+	
+	console.log(typeof (sequence[0]));
+	
+	console.log ( arr.length );
+	
+	for (var i = 1; i < arr.length; i ++)
+	{
+		
+		if ( arr[i] > arr[i - 1] )
+		{
+			sequence.push(arr[i]);
+		}
+		
+		else
+		{
+			
+			if ( sequence.length > maxlength )
+			{
+				maxsequence = sequence;
+				maxlenght = sequence.length;
+			}
+		
+			sequence = new Array();
+			
+			sequence.push(arr[i]);
+			
+		}
+		
+		
+	}
+	
+	maxsequence = sequence;
+	
+	document.getElementById("Sequence").innerHTML = maxsequence;
+	
+}
+
+function GetArray()
+{
+
+	inputString = document.getElementById("array").value;
+	
+	arr = inputString.split(" ");
+	
+	for (var i in arr)
+	{
+		arr[i] = parseInt(arr[i]);
+	}
+	
+	FindSequence();
+	
+	return;
+	
+}
+
+</script>
+
+<form action = "MaxIncreasingSequence.asp" autocomplete = "on">
+
+EnterArray: <input id = "array" value = "">
+
+</br>
+
+<button type = "button" onclick = "GetArray()"> Find Max Increasing Sequence! </button>
+
+<p>
+
+Maximum Increasing Sequence:
+
+<p id = "Sequence"> </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+
+</head>
+
+<body>
+
+<script >
+
+function GetArray()
+{
+
+	var inputString = document.getElementById("array").value;
+	
+	var arr = inputString.split(" ");
+	
+	for (var i in arr)
+	{
+		arr[i] = parseInt(arr[i]);
+	}
+	
+	var mn = arr[0] , mx = arr[0];
+	
+	for (var i in arr)
+	{
+		if (arr[i] > mx) mx = arr[i];
+		if (arr[i] < mn) mn = arr[i];
+	}
+	
+	document.getElementById("MaxText").innerHTML = mx;
+	document.getElementById("MinText").innerHTML = mn;
+	
+	return;
+	
+}
+
+function FindMinMax()
+{
+	
+	
+	
+	return;
+	
+}
+
+</script>
+
+<form action = "MaxMinForm.asp" autocomplete = "on">
+
+Enter Array: <input id = "array" value = "">
+
+</br>
+
+<button type = "button" onclick = "GetArray()"> Find Values </button>
+
+<p>
+
+Max: <p id = "MaxText"> </p>
+
+Min: <p id = "MinText"> </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>

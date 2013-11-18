@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+
+</head>
+
+<body>
+
+<script >
+
+function ReverseDecNumber()
+{
+
+	var Number = new String("");
+	
+	var Reversed = new String("");
+	
+	Number = document.getElementById("decNumber").value;
+	
+	console.log (Number.length);
+	
+	for ( var i in Number )
+	{
+		Reversed += Number[Number.length - 1 - i];
+	}
+
+	console.log (Reversed);
+	
+	document.getElementById("Reversed").innerHTML = Reversed;
+	
+}
+
+</script>
+
+<form action = "Reverse.asp" autocomplete = "on">
+
+Decimal Number: <input id = "decNumber" value = "">
+
+<br/>
+
+<button type = "button" onclick = "ReverseDecNumber()"> Reverse Number  </button>
+
+<p>
+
+<p id = "Reversed" > </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>
