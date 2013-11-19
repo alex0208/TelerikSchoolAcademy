@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 7</title>
+</head>
+<body>
+    <label for="inputArray">Enter an array</label>
+    <input type="text" id="inputArray">
+    <label for="inputNumber">Enter a number</label>
+    <input type="text" id="inputNumber">
+    <button onclick="IndexOf(readIntegerArray('#inputArray'), jsConsole.readInteger('#inputNumber'))">Get Index</button>
+    <br>
+    <br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function IndexOf(array, searchElement) {
+            var minIndex = 0;
+			var br = 0;
+            var maxIndex = array.length - 1;
+            var currentIndex;
+            var currentElement;
+
+            while (minIndex <= maxIndex) {
+                currentIndex = (minIndex + maxIndex) / 2 | 0;
+                currentElement = array[currentIndex];
+				minIndex=minIndex+1;
+				if(currentElement == searchElement){br++;}
+                   jsConsole.writeLine(br);
+				   return;
+                
+            }
+		
+        }
+
+        function readIntegerArray(inputSelector) {
+            var nums = jsConsole.read(inputSelector);
+            nums = nums.split(" ");
+            for (var i in nums) {
+                nums[i] = parseInt(nums[i], 10);
+            }
+            return nums;
+        }
+
+    </script>
+</body>
+</html>
