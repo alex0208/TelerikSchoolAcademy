@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 7</title>
+</head>
+<body>
+    <label for="inputArray">Enter an array</label>
+    <input type="text" id="inputArray">
+    <label for="inputNumber">Enter a number</label>
+    <input type="text" id="inputNumber">
+    <button onclick="IndexOf(readIntegerArray('#inputArray'), jsConsole.readInteger('#inputNumber'))">Get Index</button>
+    <br>
+    <br>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function IndexOf(array, searchElement) {
+            var minIndex = 0;
+            var maxIndex = array.length - 1;
+            var currentIndex;
+            var currentElement;
+
+            while (minIndex <= maxIndex) {
+                currentIndex = (minIndex + maxIndex) / 2 | 0;
+                currentElement = array[currentIndex];
+
+                if (currentElement < searchElement) {
+                    minIndex = currentIndex + 1;
+                }
+                else if (currentElement > searchElement) {
+                    maxIndex = currentIndex - 1;
+                }
+                else {
+                    jsConsole.writeLine("The index of the element " + searchElement + " is " + currentIndex);
+                    return;
+                }
+            }
+
+            jsConsole.writeLine("There were no matches for the element " + searchElement + " in the array you entered");
+        }
+
+        function readIntegerArray(inputSelector) {
+            var nums = jsConsole.read(inputSelector);
+            nums = nums.split(" ");
+            for (var i in nums) {
+                nums[i] = parseInt(nums[i], 10);
+            }
+            return nums;
+        }
+
+    </script>
+</body>
+</html>
+
+
