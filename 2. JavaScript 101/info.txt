@@ -39,7 +39,7 @@
 9. OBJECTS
 
 	1) sasho
-	2) tencho
+	2) tencho		-done
 	3) ryapov
 	4) stoynov
 	5) ivo
@@ -47,12 +47,12 @@
 
 10. STRINGS
 
-	1) tencho
+	1) tencho		- done
 	2) ryapov
 	3) stoynov		- done
 	4) ivo
 	5) sasho		- done
-	6) tencho
+	6) tencho		- done
 	7) ryapov
 	8) stoynov
 	9) ivo
