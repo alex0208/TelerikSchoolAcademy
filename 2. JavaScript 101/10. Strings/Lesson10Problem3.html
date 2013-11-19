@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<script >
+
+var mainString = new String();
+var subString = new String();
+
+function LowerCaseStrings()
+{
+	
+	mainString = mainString.toLowerCase();
+	subString  =  subString.toLowerCase();
+	
+	return;
+	
+}
+
+function CheckSubString( StartIndex )
+{
+
+	var br = 0;
+
+	StartIndex = parseInt( StartIndex );
+
+	for ( var i in subString )
+	{
+	
+		i = parseInt(i);
+		
+		if ( subString[i] == mainString[StartIndex + i] && br > 0 )
+		{
+		console.log ( subString[i] + " " + mainString[StartIndex + i] );
+		
+		console.log ( StartIndex + " type = " + typeof( StartIndex ));
+		}
+	
+		if ( subString[i] != mainString[StartIndex + i] ) return false;
+		
+		br ++;
+		
+	}
+	
+	return true;
+
+}
+
+function FindCount()
+{
+	
+	mainString = new String();
+	subString = new String();
+	
+	var br = 0;
+	
+	mainString = document.getElementById("stringBox").value;
+	subString = document.getElementById("subStringBox").value;
+	
+	LowerCaseStrings();
+	
+	console.log( mainString.length );
+	
+	for ( var i in mainString )
+	{
+		
+		if( CheckSubString( i ) == true) br ++;
+		
+	}
+	
+	document.getElementById("FinalString").innerHTML = br;
+
+}
+
+</script>
+
+<form action = "Bigger.asp" autocomplete = "on">
+
+Enter Main String: <input id = "stringBox" value = "">
+
+<br/>
+
+Enter Substring: <input id = "subStringBox" value = "">
+
+<br/>
+
+<button type = "button" onclick = "FindCount()"> Find Count </button>
+
+<p>
+
+<p id = "FinalString" > </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>
