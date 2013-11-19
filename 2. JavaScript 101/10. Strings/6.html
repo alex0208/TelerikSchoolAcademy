@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 7</title>
+</head>
+<body>
+    <div>text<div>more text</div>
+        and more...</div>
+    in body
+    <button onclick="getTextContent()">Get content</button>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function getTextContent() {
+            var head = document.getElementsByTagName('head');
+            var headText = head[0].innerText;
+            var body = document.getElementsByTagName('body');
+            var bodyText = body[0].innerText;
+
+            jsConsole.writeLine(headText + bodyText);
+        }
+
+    </script>
+</body>
+</html>
