@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+	<title>Exercise 4</title>
+</head>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        var array = new Array();
+        for (var property in document) {
+            array.push(property);
+        }
+        array.sort();
+        jsConsole.writeLine("The largest property in document is " + array[0] + "<br> and the smallest is " + array[array.length - 1]);
+
+        var array = new Array();
+        for (var property in window) {
+            array.push(property);
+        }
+        array.sort();
+        jsConsole.writeLine("<br>The largest property in window is " + array[0] + "<br> and the smallest is " + array[array.length - 1]);
+
+        var array = new Array();
+        for (var property in navigator) {
+            array.push(property);
+        }
+        array.sort();
+        jsConsole.writeLine("<br>The largest property in navigator is " + array[0] + "<br> and the smallest is " + array[array.length - 1]);
+    </script>
+</body>
+</html>
+
+

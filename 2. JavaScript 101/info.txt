@@ -14,7 +14,7 @@
 	1) ryapov		- done
 	2) stoynov
 	3) ivo			- done
-	4) sasho
+	4) sasho		- done
 
 7. ARRAYS
 
