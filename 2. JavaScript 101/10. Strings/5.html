@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+	<title>Exercise 5</title>
+</head><div id="js-console">
+    <label for="inputText">Text:</label> <br>
+    <textarea name="" id="inputText" cols="30" rows="10"></textarea>
+    <button onclick="onClickRemoveWhiteSpace()">Remove</button>
+    </div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function onClickRemoveWhiteSpace() {
+            var input = jsConsole.read("#inputText");
+            jsConsole.writeLine(replaceChars(input, '&nbsp;'));
+
+        }
+
+        function replaceChars(text, symbol) {
+            var result = new String();
+            for (var ch in text) {
+                (text[ch] == ' ' ? result += symbol : result += text[ch])
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
+
+
