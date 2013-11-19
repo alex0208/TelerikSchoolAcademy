@@ -54,7 +54,7 @@
 	5) sasho		- done
 	6) tencho		- done
 	7) ryapov
-	8) stoynov
+	8) stoynov		- done
 	9) ivo
 	10) sasho
 	11) tencho

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<script >
+
+var mainString = new String();
+
+function ReplaceEndBracket( startIndex )
+{
+
+	startIndex = parseInt(startIndex);
+
+	var BracketIndex = mainString.search("\">");
+
+	if ( BracketIndex >= startIndex )
+	{
+	
+		mainString = mainString.replace( "\">" , "]" );
+	
+	}
+	
+	return;
+
+}
+
+function ReplaceEndTag( startIndex )
+{
+
+	startIndex = parseInt(startIndex);
+
+	var TagIndex = mainString.search("</a>");
+
+	if ( TagIndex >= startIndex )
+	{
+	
+		mainString = mainString.replace( "</a>" , "[/URL]" );
+	
+	}
+	
+	return;
+
+}
+
+function FindCount()
+{
+	
+	mainString = new String();
+	
+	var br = 0;
+	
+	mainString = document.getElementById("stringBox").value;
+	
+	console.log( mainString.length );
+	
+	var subString;
+	var subStringIndex = 0;
+	
+	subStringIndex = mainString.search( "<a href=\"" );
+	
+	while ( subStringIndex > -1 )
+	{
+		
+		mainString = mainString.replace( "<a href=\"" , "[URL=" );
+		ReplaceEndBracket( subStringIndex + 5 );
+		ReplaceEndTag( subStringIndex + 5 );
+		
+		subStringIndex = mainString.search( "<a href=\"" );
+		
+	}
+	
+	document.getElementById("FinalString").innerHTML = mainString;
+
+}
+
+</script>
+
+<form action = "Bigger.asp" autocomplete = "on">
+
+Enter Main String: <input id = "stringBox" value = "">
+
+<br/>
+
+<button type = "button" onclick = "FindCount()"> Find Count </button>
+
+<p>
+
+<p id = "FinalString" > </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>
