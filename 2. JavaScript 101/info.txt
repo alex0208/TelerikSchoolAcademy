@@ -1,40 +1,40 @@
 5. CONDITIONAL STATEMENTS
 
-	1) ivo
-	2) sasho
-	3) tencho
-	4) ryapov
-	5) stoynov
-	6) ivo
-	7) sasho
-	8) tencho
+	1) ivo			- done
+	2) sasho		- done
+	3) tencho		- done
+	4) ryapov		- done
+	5) stoynov		- done
+	6) ivo			- done
+	7) sasho		- done
+	8) tencho		- done
 
 6. LOOPS
 	
-	1) ryapov
+	1) ryapov		- done
 	2) stoynov
-	3) ivo
+	3) ivo			- done
 	4) sasho
 
 7. ARRAYS
 
-	1) tencho
-	2) ryapov
-	3) stojnov
-	4) ivo
-	5) sasho
-	6) tencho
-	7) ryapov
+	1) tencho		- done
+	2) ryapov		- done
+	3) stojnov		- done
+	4) ivo			- done
+	5) sasho		- done
+	6) tencho		- done
+	7) ryapov		- done
 
 8. FUNCTIONS
 
-	1) stoynov
-	2) ivo
+	1) stoynov	
+	2) ivo			- done
 	3) sasho
-	4) tencho
+	4) tencho		- done
 	5) ryapov
 	6) stoynov
-	7) ivo
+	7) ivo			- done
 
 9. OBJECTS
 
