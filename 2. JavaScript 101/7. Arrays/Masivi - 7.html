@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>
+
+ <head>
+
+  <title>Masivi - 7</title>
+
+  <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+  <META http-equiv=Content-language content=bg>
+
+ </head>
+
+ <body>
+  <script language=JavaScript type='text/JavaScript'>
+   var a = [];
+   var m, f, n, l, r;
+
+   r = 0;
+   do
+   {
+    m = prompt('моля въведете поредния елемент на масива (. - край)', '');
+    if (m != '.')
+    a[r++] = m;
+   }
+   while (m != '.');
+   n = prompt('моля въведете число, което ще се търси', '');
+
+   a.sort();
+   l = 0;
+   r = a.length - 1;
+   f = -1;
+   while ((l <= r) && (f == -1))
+   {
+    m = (l + r) / 2;
+    if (a[m] == n)
+    f = m;
+    else
+    if (n < a[m])
+    r = m - 1;
+    else
+    l = m + 1;
+   }
+   if (f >= 0)
+   console.log('търсеният елемент има индекс ', f);
+   else
+   console.log('търсеният елемент не се съдържа в масива');
+  </script>
+ </body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+<html>
+
+ <head>
+
+  <title>Курс по JavaScript</title>
+
+  <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+  <META http-equiv=Content-language content=bg>
+
+ </head>
+
+ <body>
+  <script language=JavaScript type='text/JavaScript'>
+   var m1 = [];
+   var m2 = [];
+   var c, i, l1, l2;
+
+   i = 0;
+   do
+   {
+    c = prompt('моля въведете поредния символ за първия масив (. - край)', '');
+    if (c != '.')
+    m1[i++] = c; 
+   }
+   while (c != '.');
+   i = 0;
+   do
+   {
+    c = prompt('моля въведете поредния символ за втория масив (. - край)', '');
+    if (c != '.')
+    m2[i++] = c;
+   }
+   while (c != '.');
+
+   l1 = m1.length;
+   l2 = m2.length;
+   c = Math.min(l1, l2);
+   for (i = 0; (i < c) && (m1[i] == m2[i]); i++) ;
+   if (i < c) 
+   if (m1[i] < m2[i])
+   console.log('първият масив е по-малък лексикографски от втория');
+   else
+   console.log('първият масив е по-голям лексикографски от втория');
+   else 
+   if (l1 < l2)
+   console.log('първият масив е по-малък лексикографски от втория');
+   else
+   if (l1 > l2)
+   console.log('първият масив е по-голям лексикографски от втория');
+   else
+   console.log('масивите са равни лексикографски');
+  </script>
+ </body>
+
+</html>

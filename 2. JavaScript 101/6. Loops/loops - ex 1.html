@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Loops - Primes in range</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>										 
+
+
+	<a href="#" id="btn-izvedi" onclick="onBtnClick()">Izvedi chislata</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function onBtnClick() {
+			var start = 1;
+			var end = 10;
+
+			for (var number = start; number < end; number++) {
+					jsConsole.write(number + ", ");
+				
+			}
+			jsConsole.writeLine("10");
+		}
+		
+	</script>
+</body>
+</html>
