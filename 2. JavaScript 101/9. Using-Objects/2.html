@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 7</title>
+    <style type="text/css">
+        .standard-div {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 12px;
+            background-color: red;
+        }
+
+        ul {
+            list-style-type: none;
+            float: left;
+            padding: 0;
+            margin: 0;
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+    <label for="inputArray">Enter an array</label>
+    <input type="text" id="inputArray">
+    <label for="inputNumber">Enter a number to remove from the array</label>
+    <input type="text" id="inputNumber">
+    <br>
+    <button onclick="onRemoveElementClick(readIntegerArray('#inputArray'), jsConsole.readInteger('#inputNumber'))">Remove element</button>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        Array.prototype.remove = function (element) {
+
+            for (var i = this.length - 1; i >= 0; i--) {
+                if (this[i] === element) {
+                    this.splice(i, 1);
+                }
+            }
+
+            return this;
+        }
+        function onRemoveElementClick(array, element) {
+
+            delete array.remove;
+            array.remove(element);
+            for (var i in array) {
+                if(i != "remove")
+                    jsConsole.write(array[i] + " ");
+            }
+        }
+
+        function readIntegerArray(inputSelector) {
+            nums = jsConsole.read(inputSelector);
+            nums = nums.split(" ");
+            for (var i in nums) {
+                nums[i] = parseInt(nums[i], 10);
+            }
+            return nums;
+        }
+
+    </script>
+</body>
+</html>
+
+
