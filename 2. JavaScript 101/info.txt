@@ -1,0 +1,61 @@
+5. CONDITIONAL STATEMENTS
+
+	1) ivo
+	2) az
+	3) tencho
+	4) ryapov
+	5) stoynov
+	6) ivo
+	7) az
+	8) tencho
+
+6. LOOPS
+	
+	1) ryapov
+	2) stoynov
+	3) ivo
+	4) az
+
+7. ARRAYS
+
+	1) tencho
+	2) ryapov
+	3) stojnov
+	4) ivo
+	5) az
+	6) tencho
+	7) ryapov
+
+8. FUNCTIONS
+
+	1) stoynov
+	2) ivo
+	3) az
+	4) tencho
+	5) ryapov
+	6) stoynov
+	7) ivo
+
+9. OBJECTS
+
+	1) az
+	2) tencho
+	3) ryapov
+	4) stoynov
+	5) ivo
+	6) az
+
+10. STRINGS
+
+	1) tencho
+	2) ryapov
+	3) stoynov
+	4) ivo
+	5) az
+	6) tencho
+	7) ryapov
+	8) stoynov
+	9) ivo
+	10) az
+	11) tencho
+	12) ryapov
