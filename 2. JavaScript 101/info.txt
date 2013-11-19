@@ -49,7 +49,7 @@
 
 	1) tencho
 	2) ryapov
-	3) stoynov
+	3) stoynov		- done
 	4) ivo
 	5) sasho
 	6) tencho
