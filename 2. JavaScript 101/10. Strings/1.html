@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 7</title>
+    <style type="text/css">
+        .standard-div {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 12px;
+            background-color: red;
+        }
+
+        ul {
+            list-style-type: none;
+            float: left;
+            padding: 0;
+            margin: 0;
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+    <label for="text">Enter a string</label>
+    <input type="text" id="text">
+    <br>
+    <button onclick="reverseTextClick(jsConsole.read('#text'))">Reverse text</button>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function reverseTextClick(text) {
+            for (var i = text.length; i >= 0; i--) {
+                jsConsole.write(text[i]);
+            }
+            jsConsole.writeLine();
+        }
+
+    </script>
+</body>
+</html>
