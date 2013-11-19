@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 7</title>
+    <style type="text/css">
+        .standard-div {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 12px;
+            background-color: red;
+        }
+
+        ul {
+         list-style-type:none;
+         float: left;
+         padding :0;
+         margin: 0;
+         margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="addNewDivElement()">Add new div element</button>
+    <br>
+    <button onclick="getDivsCount()">Get div elements count</button>
+    <br>
+    <br>
+    <ul id="divsList">
+        <li>
+            <div class="standard-div"></div>
+        </li>
+        <li>
+            <div class="standard-div"></div>
+        </li>
+    </ul>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function getDivsCount() {
+            var divs = document.getElementsByTagName('div');
+            jsConsole.writeLine("There are " + (divs.length - 1) + " divs on this page(excluding the console div)");
+        }
+
+        function addNewDivElement() {
+            var divsList = document.getElementById('divsList');
+
+            var newListItem = document.createElement('li');
+
+            var newDiv = document.createElement('div');
+            newDiv.setAttribute('class', 'standard-div');
+
+            newListItem.appendChild(newDiv);
+            divsList.appendChild(newListItem);
+        }
+
+    </script>
+</body>
+</html>
+
+
