@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 11</title>
+</head>
+<body>
+    <label for="format">Enter a string format(e.g. My {0} is {1}.)</label>
+    <input type="text" id="format">
+    <br>
+    <label for="placeholders">Enter placeholders separated by spaces</label>
+    <input type="text" id="placeholders">
+    <button onclick="onFormatClick()">Format</button>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+
+        jsConsole.writeLine("This example uses the apply() method to call stringFormat() ");
+        jsConsole.writeLine("so as to pass the placeholders array as individual parameters.");
+        jsConsole.writeLine("The example use of the stringFormat() method would be : ");
+        jsConsole.writeLine("var format = \"I've got a {0} {1} and a {2} {3}\";");
+        jsConsole.writeLine("var str = stringFormat(format, \"black\", \"cat\", \"white\", \"dog\");");
+
+        function stringFormat(format) {
+            //extracts the arguments excluding the first element which is the format string
+            var args = Array.prototype.slice.call(arguments, 1);
+
+            //uses the string.replace() method
+            //uses a regex to match the values from {0} to {29} without leading a leading zero
+            //uses an anonymous function where match is the placeholder string e.g {0} and number is the current index bound to this placeholder
+            return format.replace(/{([0-9]|[1-2][0-9])}/g, function (match, number) {
+                //checks if the argument with the specified number exists
+                return typeof args[number] != 'undefined'
+                  ? args[number]
+                    // and if it does not exist keeps the placeholder value as it was
+                  : match
+                ;
+            });
+        };
+
+        function onFormatClick()
+        {
+            var args = readPlaceholdersAndFormat('#format', '#placeholders');
+            var formattedString = stringFormat.apply(formattedString, args);
+            jsConsole.writeLine(formattedString);
+        }
+
+        function readPlaceholdersAndFormat(formatSelector, placeholdersSelector) {
+
+            var format = jsConsole.read(formatSelector);
+            var text = jsConsole.read(placeholdersSelector);
+
+            text = text.split(" ");
+            text.unshift(format);
+
+            return text;
+        }
+
+        //sample use
+        //var format = "I've got a {0} {1} and a {2} {3}";
+        //var str = stringFormat(format, "black", "cat", "white", "dog");
+        //jsConsole.writeLine(str);
+
+    </script>
+</body>
+</html>
