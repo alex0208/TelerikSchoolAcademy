@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 10</title>
+</head>
+    <label for="polindrome">Enter text: </label>
+    <input type="text" id="polindrome"> <br>
+    <button onclick="onClickFindPolindromes()">Find the polindromes</button>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function onClickFindPolindromes() {
+            var strBuilder = StringBuilder();
+            var input = jsConsole.read("#polindrome");
+            input = input.toLowerCase();
+            input = input.replace(".", " ").replace("!", " ").replace("?", " ").replace(",", " ");
+            var stringArr = input.split(" ");
+            for (var i = 0; i < stringArr.length; i++) {
+                strBuilder = StringBuilder();
+                for (var j = stringArr[i].length - 1; j >= 0 ; j--) {
+                    strBuilder.append(stringArr[i][j]);
+                }
+                if (strBuilder.toString() == stringArr[i]) {
+                    jsConsole.writeLine(stringArr[i]);
+                }
+            }
+        }
+        function StringBuilder() {
+            return {
+                strs: [],
+                len: 0,
+                append: function (str) {
+                    this.strs[this.len++] = str;
+                    return this;
+                },
+                toString: function () {
+                    return this.strs.join("");
+                }
+            };
+        }
+
+
+    </script>
+
+</body>
+</html>
