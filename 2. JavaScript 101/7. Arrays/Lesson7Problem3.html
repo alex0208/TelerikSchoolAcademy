@@ -22,17 +22,20 @@ function FindSequence()
 	var	maxsequence = new Array();
 	
 	var maxlength = 1;
+	maxlength = parseInt(maxlength);
 	
 	sequence.push(arr[0]);
 	
 	console.log(typeof (sequence[0]));
 	
-	console.log ( arr.length );
+	console.log ( sequence.length );
 	
 	for (var i = 1; i < arr.length; i ++)
 	{
+	
+		console.log ( sequence.length + " " + maxlength );
 		
-		if ( arr[i] > arr[i - 1] )
+		if ( arr[i] == arr[i - 1] )
 		{
 			sequence.push(arr[i]);
 		}
@@ -43,7 +46,7 @@ function FindSequence()
 			if ( sequence.length > maxlength )
 			{
 				maxsequence = sequence;
-				maxlenght = sequence.length;
+				maxlength = sequence.length;
 			}
 		
 			sequence = new Array();
@@ -85,11 +88,11 @@ EnterArray: <input id = "array" value = "">
 
 </br>
 
-<button type = "button" onclick = "GetArray()"> Find Max Increasing Sequence! </button>
+<button type = "button" onclick = "GetArray()"> Find Max Equal Sequence! </button>
 
 <p>
 
-Maximum Increasing Sequence:
+Maximum Equal Sequence:
 
 <p id = "Sequence"> </p>
 

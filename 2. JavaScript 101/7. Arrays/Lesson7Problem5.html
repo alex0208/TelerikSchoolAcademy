@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+
+</head>
+
+<body>
+
+<script >
+
+var inputString;
+var arr;
+
+function SortArray()
+{
+
+	var helpArr = new Array();
+	
+	var indx = 0;
+	
+	var cycles = arr.length;
+	
+	for (var cycle = 0; cycle < cycles; cycle ++)
+	{
+	
+		var mn = arr[0] , mnIndx = 0;
+	
+		for (var i = 1; i < arr.length; i ++)
+		{
+			
+			if ( arr[i] < mn ) { mn = arr[i]; mnIndx = i; }
+			
+			
+		}
+		
+		arr.splice( mnIndx , 1 );
+			
+		console.log ( arr );
+		
+		console.log ( mn );
+		
+		helpArr.push ( mn );
+	
+	}
+	
+	document.getElementById("SortedArray").innerHTML = helpArr;
+
+}
+
+function GetArray()
+{
+
+	inputString = document.getElementById("array").value;
+	
+	arr = inputString.split(" ");
+	
+	for (var i in arr)
+	{
+		arr[i] = parseInt(arr[i]);
+	}
+	
+	SortArray();
+	
+	return;
+	
+}
+
+</script>
+
+<form action = "SelectionSort.asp" autocomplete = "on">
+
+EnterArray: <input id = "array" value = "">
+
+</br>
+
+<button type = "button" onclick = "GetArray()"> Sort Array! </button>
+
+<p>
+
+Sorted Array:
+
+<p id = "SortedArray"> </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>

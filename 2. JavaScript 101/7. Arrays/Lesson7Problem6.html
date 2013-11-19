@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+
+</head>
+
+<body>
+
+<script >
+
+var inputString;
+var arr;
+
+var values = new Array();
+var countValues = new Array();
+
+function ShowResult()
+{
+	var mx = countValues[0] , mxIndx = 0;
+	
+	for (var i in countValues)
+	{
+		
+		if ( countValues[i] > mx )
+		{
+			mx = countValues[i];
+			mxIndx = i;
+		}
+		
+	}
+
+	var OutputString = values[mxIndx].toString() + " (" + countValues[mxIndx].toString() + " times)";
+	
+	document.getElementById("Frequent").innerHTML = OutputString;
+}
+
+function ValuePosition( CheckedValue )
+{
+	
+	for ( var i in values )
+	{		
+		console.log ( i + " " + values[i] + " Checked: " + CheckedValue );
+		if ( values[i] == CheckedValue ) { return i; }
+	}
+	
+	console.log( " ---------------------------- " );
+	
+	return -1;
+}
+
+function Frequent()
+{
+
+	for ( var i in arr )
+	{
+	
+		if ( ValuePosition( arr[i] ) != -1 )
+		{
+		
+			countValues[ ValuePosition( arr[i] ) ] ++;
+			
+		}
+		else
+		{
+			values.push( arr[i] );
+			countValues.push ( 1 );
+		}
+	}
+	
+	ShowResult();
+
+}
+
+function GetArray()
+{
+	values = new Array();
+	countValues = new Array();
+	arr - new Array();
+
+	inputString = document.getElementById("array").value;
+	
+	arr = inputString.split(" ");
+	
+	for (var i in arr)
+	{
+		arr[i] = parseInt(arr[i]);
+	}
+	
+	Frequent();
+	
+	return;
+	
+}
+
+</script>
+
+<form action = "Frequent.asp" autocomplete = "on">
+
+EnterArray: <input id = "array" value = "">
+
+</br>
+
+<button type = "button" onclick = "GetArray()"> Get Most Frequent Number </button>
+
+<p>
+
+Most Frequent Number:
+
+<p id = "Frequent"> </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>
