@@ -4,17 +4,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="styles/js-console.css" rel="stylesheet" />
 	<title>Exercise 5</title>
-</head><div id="js-console">
+</head>
     <label for="inputText">Text:</label> <br>
-    <textarea name="" id="inputText" cols="30" rows="10"></textarea>
+    <textarea name="" id="inputText" cols="50" rows="3"></textarea> <br>
     <button onclick="onClickRemoveWhiteSpace()">Remove</button>
-    </div>
+    <div id="js-console"></div>
     <script src="js-console/js-console.js"></script>
     <script>
         function onClickRemoveWhiteSpace() {
             var input = jsConsole.read("#inputText");
             jsConsole.writeLine(replaceChars(input, '&nbsp;'));
-
         }
 
         function replaceChars(text, symbol) {
