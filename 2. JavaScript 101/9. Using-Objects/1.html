@@ -23,19 +23,25 @@
             var b = new Point(jsConsole.readInteger("#posBX"), jsConsole.readInteger("#posBY"));
             var c = new Point(jsConsole.readInteger("#posCX"), jsConsole.readInteger("#posCY"));
 
-            jsConsole.writeLine(a);
-            jsConsole.writeLine(b);
-            jsConsole.writeLine(c);
+            a.toString();
+            jsConsole.writeLine();
+            b.toString();
+            jsConsole.writeLine();
+            c.toString();
+            jsConsole.writeLine();
 
             var lineA = new LineLength(b, c);
             var lineB = new LineLength(a, c);
             var lineC = new LineLength(a, b);
 
-            jsConsole.writeLine(lineA + ", length: " + lineA.getLength());
-            jsConsole.writeLine(lineB + ", length: " + lineB.getLength());
-            jsConsole.writeLine(lineC + ", length: " + lineC.getLength());
+            lineA.toString();
+            jsConsole.writeLine();
+            lineB.toString();
+            jsConsole.writeLine();
+            lineC.toString();
+            jsConsole.writeLine();
 
-            jsConsole.writeLine("These lines " + canMakeTriangle(lineA, lineB, lineC) ? "can" : "cannot" + "make a triangle")
+            jsConsole.writeLine("These lines " + (canMakeTriangle(lineA, lineB, lineC) ? "can" : "cannot") + " form a triangle.")
         }
 
 
@@ -46,7 +52,7 @@
                 return Math.sqrt((this.x - p.x) * (this.x - p.x) + (this.y - p.y) * (this.y - p.y));
             };
             this.toString = function() {
-                return jsConsole.writeLine("point( " + this.x + ", " + this.y + ")")
+                jsConsole.write("point( " + this.x + ", " + this.y + ")");
             }
             this.clone = function() {
                 return new Point(this.x, this.y);
@@ -60,7 +66,10 @@
                 return this.start.getDistance(this.end);
             };
             this.toString = function() {
-                return jsConsole.writeLine("line segment ( " + this.start + ", " + this.end + ")")
+                jsConsole.write("line segment ( ");
+                this.start.toString();
+                jsConsole.write( ", ");
+                this.end.toString();
             }
         }
 
