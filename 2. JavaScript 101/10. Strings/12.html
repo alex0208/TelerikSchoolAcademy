@@ -21,8 +21,7 @@
         var peopleList = generateList(people, nameAgeTemplate);
 
         function generateList(objects, template) {
-            //template = template.split('><');
-            //recoverAfterSplit(template);
+
             var list = document.getElementById('people');
             for (var i in objects) {
 
@@ -40,23 +39,6 @@
             pre.innerText = "This is the HTML generated : " + document.getElementById('list-container').innerHTML;
             body.appendChild(pre);
             return;
-        }
-
-        function recoverAfterSplit(array) {
-
-            for (var i in array) {
-                switch (i) {
-                    case "0":
-                        array[i] += '>';
-                        break;
-                    case (array.length - 1).toString():
-                        array[i] = '<' + array[i];
-                        break;
-                    default:
-                        array[i] = '<' + array[i] + '>';
-                        break;
-                }
-            }
         }
 
     </script>
