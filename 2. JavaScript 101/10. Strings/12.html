@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 12</title>
+</head>
+<body>
+    <div id="list-item">
+        <strong>-{name}-</strong><span>-{age}-</span>
+    </div>
+    <br>
+    <div id="list-container">
+        <ul id="people">
+        </ul>
+    </div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        var people = [{ name: "Angel", age: 14 }, { name: "Boika", age: 17 }, { name: "Condio", age: 80 }, { name: "Daniel", age: 2 }, ];
+        var nameAgeTemplate = document.getElementById('list-item').innerHTML;
+        var peopleList = generateList(people, nameAgeTemplate);
+
+        function generateList(objects, template) {
+            //template = template.split('><');
+            //recoverAfterSplit(template);
+            var list = document.getElementById('people');
+            for (var i in objects) {
+
+                var li = template.replace(/-{(.*?)}-/g, function (match, prop) {
+                    return objects[i].hasOwnProperty(prop) ? objects[i][prop] : match;
+                })
+                var element = document.createElement('li');
+                element.innerHTML = li;
+                list.appendChild(element);
+
+            }
+
+            var body = document.getElementsByTagName('body')[0];
+            var pre = document.createElement('pre');
+            pre.innerText = "This is the HTML generated : " + document.getElementById('list-container').innerHTML;
+            body.appendChild(pre);
+            return;
+        }
+
+        function recoverAfterSplit(array) {
+
+            for (var i in array) {
+                switch (i) {
+                    case "0":
+                        array[i] += '>';
+                        break;
+                    case (array.length - 1).toString():
+                        array[i] = '<' + array[i];
+                        break;
+                    default:
+                        array[i] = '<' + array[i] + '>';
+                        break;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -48,7 +48,7 @@
 10. STRINGS
 
 	1) tencho		- done
-	2) ryapov
+	2) ryapov		- tencho did it for you 
 	3) stoynov		- done
 	4) ivo
 	5) sasho		- done
