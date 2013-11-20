@@ -4,7 +4,10 @@
 
 <head>
 
-	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
 
 </head>
 
@@ -32,8 +35,8 @@ function GetArray()
 		if (arr[i] < mn) mn = arr[i];
 	}
 	
-	document.getElementById("MaxText").innerHTML = mx;
-	document.getElementById("MinText").innerHTML = mn;
+	jsConsole.writeLine ( "Max: " + mx );
+	jsConsole.writeLine ( "Min: " + mn );
 	
 	return;
 	
@@ -57,14 +60,6 @@ Enter Array: <input id = "array" value = "">
 </br>
 
 <button type = "button" onclick = "GetArray()"> Find Values </button>
-
-<p>
-
-Max: <p id = "MaxText"> </p>
-
-Min: <p id = "MinText"> </p>
-
-</p>
 
 </form>
 

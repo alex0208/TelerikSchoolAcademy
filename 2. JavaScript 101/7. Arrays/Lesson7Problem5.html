@@ -4,7 +4,10 @@
 
 <head>
 
-	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
 
 </head>
 
@@ -47,7 +50,7 @@ function SortArray()
 	
 	}
 	
-	document.getElementById("SortedArray").innerHTML = helpArr;
+	jsConsole.writeLine( helpArr );
 
 }
 

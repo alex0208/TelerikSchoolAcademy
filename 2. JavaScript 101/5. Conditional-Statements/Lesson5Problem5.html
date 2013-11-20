@@ -3,7 +3,10 @@
 
 <head>
 
-<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
 
 </head>
 
@@ -71,7 +74,8 @@ function GetDigitName()
 	
 	}
 	
-	document.getElementById("DigitName").innerHTML = DigName;
+	if ( DigName != "Y U NO Enter Digit" ) jsConsole.writeLine( "Name of Digit: " + DigName );
+	else jsConsole.writeLine ( DigName );
 	
 	return;
 	
@@ -86,11 +90,6 @@ Digit: <input id = "digitBox" value = "0">
 <br/>
 
 <button type = "button" onclick = "GetDigitName()"> Get Name! </button>
-
-<p>
-Name Of Digit: 
-<p id = "DigitName"> </p>
-</p>
 
 </form>
 

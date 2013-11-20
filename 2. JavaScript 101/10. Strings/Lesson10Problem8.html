@@ -4,6 +4,11 @@
 
 <head>
 
+<link href="styles/js-console.css" rel="stylesheet" />
+
+<div id="js-console"></div>
+<script src="js-console/js-console.js"></script>
+
 </head>
 
 <body>
@@ -48,7 +53,7 @@ function ReplaceEndTag( startIndex )
 
 }
 
-function FindCount()
+function Convert()
 {
 	
 	mainString = new String();
@@ -75,7 +80,7 @@ function FindCount()
 		
 	}
 	
-	document.getElementById("FinalString").innerHTML = mainString;
+	jsConsole.writeLine ( mainString );
 
 }
 
@@ -87,7 +92,7 @@ Enter Main String: <input id = "stringBox" value = "">
 
 <br/>
 
-<button type = "button" onclick = "FindCount()"> Find Count </button>
+<button type = "button" onclick = "Convert()"> Convert! </button>
 
 <p>
 

@@ -4,7 +4,10 @@
 
 <head>
 
-	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
 
 </head>
 
@@ -31,6 +34,8 @@ function FindSequence()
 	
 	for (var i = 1; i < arr.length; i ++)
 	{
+	
+		console.log ( arr[i] + " " + arr[i - 1] );
 		
 		if ( arr[i] > arr[i - 1] )
 		{
@@ -55,7 +60,19 @@ function FindSequence()
 		
 	}
 	
-	document.getElementById("Sequence").innerHTML = maxsequence;
+		if ( sequence.length > maxlength )
+			{
+				maxsequence = sequence;
+				maxlenght = sequence.length;
+			}
+		
+		sequence = new Array();
+			
+		sequence.push(arr[i]);
+	
+	jsConsole.writeLine ( "Maximum Increasing Sequence: " + maxsequence );
+	
+	console.log ( maxsequence );
 	
 }
 
@@ -86,14 +103,6 @@ EnterArray: <input id = "array" value = "">
 </br>
 
 <button type = "button" onclick = "GetArray()"> Find Max Increasing Sequence! </button>
-
-<p>
-
-Maximum Increasing Sequence:
-
-<p id = "Sequence"> </p>
-
-</p>
 
 </form>
 

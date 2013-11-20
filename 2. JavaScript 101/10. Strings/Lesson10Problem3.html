@@ -4,6 +4,11 @@
 
 <head>
 
+<link href="styles/js-console.css" rel="stylesheet" />
+
+<div id="js-console"></div>
+<script src="js-console/js-console.js"></script>
+
 </head>
 
 <body>
@@ -74,7 +79,7 @@ function FindCount()
 		
 	}
 	
-	document.getElementById("FinalString").innerHTML = br;
+	jsConsole.writeLine ( br + " occurances" );
 
 }
 
@@ -91,12 +96,6 @@ Enter Substring: <input id = "subStringBox" value = "">
 <br/>
 
 <button type = "button" onclick = "FindCount()"> Find Count </button>
-
-<p>
-
-<p id = "FinalString" > </p>
-
-</p>
 
 </form>
 

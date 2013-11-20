@@ -4,7 +4,10 @@
 
 <head>
 
-	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
 
 </head>
 
@@ -58,7 +61,19 @@ function FindSequence()
 		
 	}
 	
-	document.getElementById("Sequence").innerHTML = maxsequence;
+		if ( sequence.length > maxlength )
+			{
+				maxsequence = sequence;
+				maxlength = sequence.length;
+			}
+		
+			sequence = new Array();
+			
+			sequence.push(arr[i]);
+	
+	if ( maxsequence.length == 0 ) { jsConsole.writeLine ( "All equal sequences are with the same length. Maxsequence = " + arr[0] ) }
+	
+	jsConsole.writeLine( "Maximum Equal Sequence: " maxsequence );
 	
 }
 
@@ -89,14 +104,6 @@ EnterArray: <input id = "array" value = "">
 </br>
 
 <button type = "button" onclick = "GetArray()"> Find Max Equal Sequence! </button>
-
-<p>
-
-Maximum Equal Sequence:
-
-<p id = "Sequence"> </p>
-
-</p>
 
 </form>
 

@@ -3,7 +3,10 @@
 
 <head>
 
-<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
 
 </head>
 
@@ -28,8 +31,8 @@ function SolveQuadric()
 		x1 = -c / b;
 		x2 = "Not a quadric equation!";
 		
-		document.getElementById("Solution1").innerHTML = x1;
-		document.getElementById("Solution2").innerHTML = x2;
+		jsConsole.writeLine ( "Roots Of Equation" );
+		jsConsole.writeLine ( x1 + " , " + x2 );
 		
 		return;
 	}
@@ -51,13 +54,12 @@ function SolveQuadric()
 	
 	else if ( D < 0 )
 	{
-		document.getElementById("Solution1").innerHTML = "Equation has no real roots!";
-		document.getElementById("Solution2").innerHTML = "";
+		jsConsole.writeLine ( "Equation has no real roots" );
 		return;
 	}
 	
-	document.getElementById("Solution1").innerHTML = x1;
-	document.getElementById("Solution2").innerHTML = x2;
+	jsConsole.writeLine ( "Roots Of Equation" );
+	jsConsole.writeLine ( x1 + " , " + x2 );
 	
 	return;
 	
@@ -80,11 +82,6 @@ c: <input id = "cbox" value = "0">
 <br/>
 
 <button type = "button" onclick = "SolveQuadric()"> Solve! </button>
-
-<p>
-Roots of Equation: 
-<p id = "Solution1"> </p> <p id = "Solution2"> </p>
-</p>
 
 </form>
 

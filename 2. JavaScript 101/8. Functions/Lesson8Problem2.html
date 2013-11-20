@@ -4,7 +4,10 @@
 
 <head>
 
-	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
 
 </head>
 
@@ -30,7 +33,7 @@ function ReverseDecNumber()
 
 	console.log (Reversed);
 	
-	document.getElementById("Reversed").innerHTML = Reversed;
+	jsConsole.writeLine ( Reversed );
 	
 }
 
@@ -43,12 +46,6 @@ Decimal Number: <input id = "decNumber" value = "">
 <br/>
 
 <button type = "button" onclick = "ReverseDecNumber()"> Reverse Number  </button>
-
-<p>
-
-<p id = "Reversed" > </p>
-
-</p>
 
 </form>
 
