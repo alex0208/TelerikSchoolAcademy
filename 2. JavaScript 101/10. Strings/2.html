@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 2</title>
+</head>
+<body>
+    <label for="text">Enter an expression with brackets</label>
+    <input type="text" id="text">
+    <br>
+    <button onclick="checkBrackets(jsConsole.read('#text'))">Check</button>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function checkBrackets(text) {
+            var depth = 0;
+            var left = 0;
+            var right = 0;
+            for (var i in text) {
+                switch (text[i]) {
+                    case '(':
+                        left++;
+                        depth++;
+                        if (left < right) {
+                            jsConsole.writeLine('mistake around position ' + i);
+                            return;
+                        }
+                        break;
+                    case ')':
+                        right++;
+                        depth--;
+                        if (left < right) {
+                            jsConsole.writeLine('mistake around position' + i);
+                            return;
+                        }
+                        break;
+                    default: break;
+
+                }
+            }
+            if (depth == 0) jsConsole.writeLine('correct');
+            else jsConsole.writeLine('wrong');
+
+        }
+
+    </script>
+</body>
+</html>
