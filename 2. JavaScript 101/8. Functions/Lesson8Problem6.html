@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
+
+</head>
+
+<body>
+
+<script type = "text/javascript">
+
+var arr = new Array();
+
+function GetArray()
+{
+
+	var inputString = document.getElementById("array").value;
+	
+	arr = inputString.split(" ");
+	
+	for (var i in arr)
+	{
+		arr[i] = parseInt(arr[i]);
+	}
+	
+	BiggerThanNeighbours();
+	
+	return;
+	
+}
+
+function BiggerThanNeighbours()
+{
+
+	var indxInput = document.getElementById("index").value;
+	
+	indxInput = parseInt ( indxInput );
+	
+	var AnswerString = new String();
+	
+	console.log ( arr[ indxInput ] );
+	
+	console.log( typeof(arr.length) );
+	
+	if ( indxInput == 0 || indxInput == arr.length - 1 )
+	{
+		jsConsole.writeLine( "Only one neighbour" );
+		
+		if ( indxInput == 0 ) if ( arr[0] <= arr[1] ) AnswerString = "not";
+		else { if ( arr[indxInput] <= arr[indxInput - 1] ) AnswerString = "not"; }
+	}
+	
+	else if ( arr[indxInput] <= arr[indxInput - 1] && arr[indxInput] <= arr[indxInput + 1] )
+	{
+		AnswerString = "not";
+	}
+	
+	console.log ( AnswerString );
+	
+	jsConsole.writeLine ( "Array[" + indxInput + "] is " + AnswerString + " bigger than it's neightbours" );
+
+}
+
+</script>
+
+<form action = "EquationForm.asp" autocomplete = "on">
+
+Array: <input id = "array" value = "0">
+
+<br/>
+
+Index: <input id = "index" value = "0">
+
+<br/>
+
+<button type = "button" onclick = "GetArray()"> Check if bigger </button>
+
+</form>
+
+</body>
+
+</html>

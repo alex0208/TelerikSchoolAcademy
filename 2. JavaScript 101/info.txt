@@ -33,7 +33,7 @@
 	3) sasho
 	4) tencho		- done
 	5) ryapov
-	6) stoynov
+	6) stoynov		- done
 	7) ivo			- done
 
 9. OBJECTS
