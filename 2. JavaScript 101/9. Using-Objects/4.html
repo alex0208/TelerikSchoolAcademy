@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 1</title>
+</head>
+<body>
+    <label for="prop">Property: </label>
+    <input type="text" id="prop">
+    <button onclick="CheckIfPropExists()">Check</button>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+        function CheckIfPropExists(){
+            var prop = jsConsole.read("#prop");
+            var obj = new Array();
+
+            jsConsole.writeLine("The object " + (hasProperty(obj, prop) ? "has" : "doesn't have") + " a property " + prop);
+
+            
+        }
+
+        function hasProperty(obj, prop) {
+            if (obj.hasOwnProperty(prop)) {
+                return true;
+            };
+
+            if (prop in obj) {
+                return true;
+            };
+
+            return false;
+        }
+    </script>
+
