@@ -22,16 +22,54 @@
             var a = new Point(jsConsole.readInteger("#posAX"), jsConsole.readInteger("#posAY"));
             var b = new Point(jsConsole.readInteger("#posBX"), jsConsole.readInteger("#posBY"));
             var c = new Point(jsConsole.readInteger("#posCX"), jsConsole.readInteger("#posCY"));
+
+            jsConsole.writeLine(a);
+            jsConsole.writeLine(b);
+            jsConsole.writeLine(c);
+
+            var lineA = new LineLength(b, c);
+            var lineB = new LineLength(a, c);
+            var lineC = new LineLength(a, b);
+
+            jsConsole.writeLine(lineA + ", length: " + lineA.getLength());
+            jsConsole.writeLine(lineB + ", length: " + lineB.getLength());
+            jsConsole.writeLine(lineC + ", length: " + lineC.getLength());
+
+            jsConsole.writeLine("These lines " + canMakeTriangle(lineA, lineB, lineC) ? "can" : "cannot" + "make a triangle")
         }
 
 
         function Point (x, y) {
             this.x = x;
-            thix.y = y;
+            this.y = y;
             this.getDistance = function (p) {
                 return Math.sqrt((this.x - p.x) * (this.x - p.x) + (this.y - p.y) * (this.y - p.y));
             };
-            
+            this.toString = function() {
+                return jsConsole.writeLine("point( " + this.x + ", " + this.y + ")")
+            }
+            this.clone = function() {
+                return new Point(this.x, this.y);
+            }
+        }
+
+        function LineLength (fpoint, spoint) {
+            this.start = fpoint.clone();
+            this.end = spoint.clone();
+            this.getLength = function() {
+                return this.start.getDistance(this.end);
+            };
+            this.toString = function() {
+                return jsConsole.writeLine("line segment ( " + this.start + ", " + this.end + ")")
+            }
+        }
+
+        function canMakeTriangle(lA, lB, lC) {
+            var a = lA.getLength();
+            var b = lB.getLength();
+            var c = lC.getLength();
+
+            return a + b > c && a + c > b && b + c > a;
         }
     </script>
 
