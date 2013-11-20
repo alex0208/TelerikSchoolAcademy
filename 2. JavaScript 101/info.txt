@@ -38,8 +38,8 @@
 
 9. OBJECTS
 
-	1) sasho
-	2) tencho		-done
+	1) sasho		- buggs
+	2) tencho		- done
 	3) ryapov
 	4) stoynov
 	5) ivo
