@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
+
+</head>
+
+<body>
+
+<script >
+
+var arr = new Array();
+
+function GetArray()
+{
+
+	var inputString = document.getElementById("array").value;
+	
+	arr = inputString.split(" ");
+	
+	for (var i in arr)
+	{
+		arr[i] = parseInt(arr[i]);
+	}
+	
+	FindCount();
+	
+	return;
+	
+}
+
+function FindCount()
+{
+
+	var number = document.getElementById("number").value;
+	
+	var count = 0;
+
+	for ( var i in arr )
+	{
+	
+		if ( arr[i] == number ) count ++;
+	
+	}
+	
+	jsConsole.writeLine(count);
+	
+	return;
+
+}
+
+</script>
+
+<form action = "Bigger.asp" autocomplete = "on">
+
+Enter Array: <input id = "array" value = "">
+
+<br/>
+
+Enter Number: <input id = "number" value = "">
+
+<br/>
+
+<button type = "button" onclick = "GetArray()"> Find Count </button>
+
+</form>
+
+</body>
+
+</html>
