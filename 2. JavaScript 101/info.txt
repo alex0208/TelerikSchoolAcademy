@@ -43,7 +43,7 @@
 	3) ryapov
 	4) stoynov
 	5) ivo
-	6) sasho
+	6) sasho		- done
 
 10. STRINGS
 
