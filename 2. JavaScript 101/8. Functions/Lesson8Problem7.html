@@ -4,7 +4,10 @@
 
 <head>
 
-	<script type = "text/javascript" scr = "jquery-1.10.2.js"> </script>
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
 
 </head>
 
@@ -19,26 +22,25 @@ function FindBigger()
 
 	console.log(typeof(arr[0]));
 
+	if ( arr[0] > arr[1] ) { jsConsole.writeLine(0); return; }
+	
 	for ( var i = 2; i < arr.length; i ++ )
 	{
-	
-		console.log( "i: " + arr[i] );
-		console.log( "i - 1: " + arr[i - 1] );
-		console.log( "i - 2: " + arr[i - 2] );
 		
 		if ( arr[i - 1] > arr[i] && arr[i - 1] > arr[i - 2] )
 		{
 			console.log("INDEX:");
 			console.log(i - 1);
 			
-			document.getElementById("indexBigger").innerHTML = i - 1;
+			jsConsole.writeLine ( i - 1 );
 			
 			return;
 		}
 	}
 	
-	document.getElementById("indexBigger").innerHTML = -1;
-	console.log(-1);
+	if ( arr[arr.length - 1] > arr[arr.length - 2] ) { jsConsole.writeLine(arr.length - 1); return; }
+	
+	jsConsole.writeLine (-1);
 	return;
 
 }
@@ -70,12 +72,6 @@ Enter Array: <input id = "array" value = "">
 <br/>
 
 <button type = "button" onclick = "GetArray()"> Find Bigger  </button>
-
-<p>
-
-<p id = "indexBigger" > </p>
-
-</p>
 
 </form>
 
