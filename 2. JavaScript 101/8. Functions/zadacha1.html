@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+
+        <script>
+            function func(number) {
+
+                var digitNames = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+
+                return prompt("This is the last digit in words:",(digitNames[number % 10]));
+            }
+        </script>
+    </head>
+    <body>
+        <p>Write a number</p>
+        <form>
+            <input type="text" name="number" placeholder="Enter a number" />
+            <input type="submit" Value="Click" onClick="func(this.form.number.value)">
+        </form>
+        
+    </body>
+</html>
