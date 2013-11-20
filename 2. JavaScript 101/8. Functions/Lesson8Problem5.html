@@ -20,6 +20,8 @@ var arr = new Array();
 function GetArray()
 {
 
+	var number = document.getElementById("number").value;
+
 	var inputString = document.getElementById("array").value;
 	
 	arr = inputString.split(" ");
@@ -29,35 +31,53 @@ function GetArray()
 		arr[i] = parseInt(arr[i]);
 	}
 	
-	FindCount();
+	jsConsole.writeLine ( "YOUR TEST:" );
+	FindCount( number , arr );
 	
 	return;
 	
 }
 
-function FindCount()
+function TestFindCount()
 {
 
-	var number = document.getElementById("number").value;
+	if ( FindCount ( 3 , [3,3,3,5,3,3,3] ) == 6 ) jsConsole.writeLine ( "Correct!" ); else jsConsole.writeLine ( "False!" )
+	if ( FindCount ( 101 , [101 , 5 , 214 , 142 , 101 , 0] ) == 2 ) jsConsole.writeLine ( "Correct!" ); else jsConsole.writeLine ( "False!" )
+	if ( FindCount ( 0 , [10 , 11 , 12 , 13 , 14] ) == 0 ) jsConsole.writeLine ( "Correct!" ); else jsConsole.writeLine ( "False!" )
+	if ( FindCount ( 81 , [4123 , 1 , 3412 , 321 , 81 , 312 , 90 , 54, 34] ) == 1 ) jsConsole.writeLine ( "Correct!" ); else jsConsole.writeLine ( "False!" )
+	if ( FindCount ( 53 , [6 , 634 , 312 , 52 , 53 , 321 , 53 , 312 , 5 , 12] ) == 2 ) jsConsole.writeLine ( "Correct!" ); else jsConsole.writeLine ( "False!" )
+	
+}
+
+function FindCount( number , LocalArr )
+{
+
+	//var number = document.getElementById("number").value;
+	
+	jsConsole.writeLine ( "Number: " + number + " Array: " + LocalArr );
 	
 	var count = 0;
 
-	for ( var i in arr )
+	for ( var i in LocalArr )
 	{
 	
-		if ( arr[i] == number ) count ++;
+		if ( LocalArr[i] == number ) count ++;
 	
 	}
 	
-	jsConsole.writeLine(count);
+	jsConsole.writeLine( count + " Occurances" );
 	
-	return;
+	return count;
 
 }
 
 </script>
 
 <form action = "Bigger.asp" autocomplete = "on">
+
+You can also enter your tests here:
+
+<br/>
 
 Enter Array: <input id = "array" value = "">
 
@@ -66,6 +86,8 @@ Enter Array: <input id = "array" value = "">
 Enter Number: <input id = "number" value = "">
 
 <br/>
+
+<button type = "button" onclick = "TestFindCount()"> Default Tests </button>
 
 <button type = "button" onclick = "GetArray()"> Find Count </button>
 
