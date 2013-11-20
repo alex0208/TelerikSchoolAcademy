@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<link href="styles/js-console.css" rel="stylesheet" />
+
+<div id="js-console"></div>
+<script src="js-console/js-console.js"></script>
+
+</head>
+
+<body>
+
+<script >
+
+var mainString = new String();
+
+var endProtocolIndex;
+var beginServerIndex , endServerIndex;
+var beginResourceIndex  , endResourceIndex;
+
+function GetProtocol()
+{
+
+	endProtocolIndex = mainString.search( "://" );
+	mainString = mainString.replace ( "://" , ":**" );
+	
+	return mainString.slice( 0 , endProtocolIndex );
+
+}
+
+function GetServer()
+{
+
+	beginServerIndex = endProtocolIndex + 3;
+	
+	endServerIndex = mainString.search( "/" );
+	
+	return mainString.slice( beginServerIndex , endServerIndex );
+
+}
+
+function GetResource()
+{
+
+	beginResourceIndex = endServerIndex;
+	
+	endResourceIndex = mainString.length;
+	
+	return mainString.slice( beginResourceIndex , endResourceIndex );
+
+}
+
+function FindURL_Els()
+{
+
+	mainString = document.getElementById("stringBox").value;
+
+	var protocolString = new String();
+	var serverString = new String();
+	var resourceString = new String();
+	
+	protocolString = "http"
+	serverString = "www.google.com";
+	resourceString = "/images";
+	
+	protocolString = GetProtocol();
+	serverString = GetServer();
+	resourceString = GetResource();
+	
+	var URL = new Object();
+	
+	URL.protocol = protocolString;
+	URL.server = serverString;
+	URL.resource = resourceString;
+	
+	var JSON_URL = JSON.stringify(URL);
+	
+	//jsConsole.writeLine( mainString );
+	
+	//document.getElementById("FinalUrlString").innerHTML = mainString;
+	
+	jsConsole.writeLine( JSON_URL );
+
+}
+
+</script>
+
+<form action = "Bigger.asp" autocomplete = "on">
+
+Enter URL: <input id = "stringBox" value = "">
+
+<br/>
+
+<button type = "button" onclick = "FindURL_Els()"> Find URL Elements </button>
+
+<p>
+
+<p id = "FinalUrlString" > </p>
+
+</p>
+
+</form>
+
+</body>
+
+</html>

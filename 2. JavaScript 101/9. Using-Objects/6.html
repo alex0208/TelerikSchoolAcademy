@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 7</title>
+</head>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>        
+        function printDictionary(dictionary) {
+            for (var i = 0; i < dictionary.length; i++) {
+                jsConsole.write(dictionary[i].key + ": ");
+                for (var j in dictionary[i].group) {
+                    jsConsole.write("(" + dictionary[i].group[j].firstname + " " + dictionary[i].group[j].lastname + ") ");
+                }
+                jsConsole.writeLine();
+            }
+        }
+        function group(persons, groupName) {
+            var dictionary = new Array();
+            dictionary.contains = function (key) {
+                for (var i = 0; i < dictionary.length; i++) {
+                    if (this[i].key == key) {
+                        return i;
+                    }
+                }
+                return -1;
+            }
+            switch (groupName) {
+                case "age": {
+                    for (var i in persons) {
+                        var index = dictionary.contains(persons[i].age);
+                        if (index == -1) {
+                            dictionary.push({ key: persons[i].age, group: new Array(persons[i]) });
+                        }
+                        else {
+                            dictionary[index].group.push(persons[i]);
+                        }
+                    }
+                    break;
+                }
+                case "firstname": {
+                    for (var i in persons) {
+                        var index = dictionary.contains(persons[i].firstname);
+
+                        if (index === -1) {
+                            dictionary.push({ key: persons[i].firstname, group: new Array(persons[i]) });
+                        }
+                        else {
+                            dictionary[index].group.push(persons[i]);
+                        }
+                    }
+                    break;
+                }
+                case "lastname": {
+                    for (var i in persons) {
+                        var index = dictionary.contains(persons[i].lastname);
+
+                        if (index === -1) {
+                            dictionary.push({ key: persons[i].lastname, group: new Array(persons[i]) });
+                        }
+                        else {
+                            dictionary[index].group.push(persons[i]);
+                        }
+                    }
+                    break;
+                }
+            }
+            return dictionary;
+        }
+        var persons = [
+            { firstname: "Gosho", lastname: "Petrov", age: 32 },
+            { firstname: "Bay", lastname: "Ivan", age: 81 },
+            { firstname: "Bay", lastname: "Georgi", age: 81 },
+            { firstname: "Unknown", lastname: "Petrov", age: 32 },
+            { firstname: "Gosho", lastname: "Ivanov", age: 23 }
+        ];
+
+        jsConsole.writeLine("Grouped by first name: ");
+        printDictionary(group(persons, "firstname"));
+
+        jsConsole.writeLine();
+
+        jsConsole.writeLine("Grouped by last name: ");
+        printDictionary(group(persons, "lastname"));
+
+        jsConsole.writeLine();
+
+        jsConsole.writeLine("Grouped by age: ");
+        printDictionary(group(persons, "age"));
+    </script>
+    
+</body>
+</html>
