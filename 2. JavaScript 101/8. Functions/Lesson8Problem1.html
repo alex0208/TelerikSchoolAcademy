@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+	<div id="js-console"></div>
+	<script src="js-console/js-console.js"></script>
+
+</head>
+
+<body>
+
+<script type = "text/javascript">
+
+function GetDigitName()
+{
+
+	var Number = document.getElementById("digitBox").value;
+	
+	var Digit = parseInt( Number[Number.length - 1] );
+	
+	console.log ( Digit );
+	
+	var DigName;
+	
+	console.log( typeof(Digit) );
+	
+	switch (Digit)
+	{
+	
+		case 0:
+			DigName = "Zero"
+			break;
+		
+		case 1:
+			DigName = "One"
+			break;
+		
+		case 2:
+			DigName = "Two"
+			break;
+		
+		case 3:
+			DigName = "Three"
+			break;
+		
+		case 4:
+			DigName = "Four"
+			break;
+		
+		case 5:
+			DigName = "Five"
+			break;
+		
+		case 6:
+			DigName = "Six"
+			break;
+		
+		case 7:
+			DigName = "Seven"
+			break;
+		
+		case 8:
+			DigName = "Eight"
+			break;
+		
+		case 9:
+			DigName = "Nine"
+			break;
+			
+		default:
+			DigName = "Y U NO Enter Number";
+			break;
+	
+	}
+	
+	if ( DigName != "Y U NO Enter Digit" ) jsConsole.writeLine( "Name of Last Digit: " + DigName );
+	else jsConsole.writeLine ( DigName );
+	
+	return;
+	
+};
+
+</script>
+
+<form action = "EquationForm.asp" autocomplete = "on">
+
+Number: <input id = "digitBox" value = "0">
+
+<br/>
+
+<button type = "button" onclick = "GetDigitName()"> Get Last Digit Name! </button>
+
+</form>
+
+</body>
+
+</html>

@@ -28,7 +28,7 @@
 
 8. FUNCTIONS
 
-	1) stoynov	
+	1) stoynov		- done
 	2) ivo			- done
 	3) sasho
 	4) tencho		- done
@@ -38,10 +38,10 @@
 
 9. OBJECTS
 
-	1) sasho		- buggs
+	1) sasho		- done
 	2) tencho		- done
 	3) ryapov
-	4) stoynov
+	4) stoynov		- done
 	5) ivo
 	6) sasho		- done
 
