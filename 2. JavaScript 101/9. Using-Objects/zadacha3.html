@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EXERCISE 3 </title>
+		
+<script src="jquery-1.10.2.js"></script>
+
+        <script type="text/Javascript">
+		
+            function DeepCopy(numbers, number) {
+
+                var Animal = {
+                    Name: "Arial",
+                    age: 5,
+                    color: "Black",
+                }
+
+                var Human = copyObject(Animal);
+                
+                prompt("The name is:",Human.Name);
+				prompt("The age is:",Human.age);
+				prompt("The color is:",Human.color);
+		
+            }
+
+            function copyObject(arr)
+            {
+                var result = {};
+
+                for(var i in arr)
+                {
+                    result[i] = arr[i];
+                }
+
+                return result;
+            }
+
+        </script>
+    </head>
+    <body>
+     <p> Name:Arial</p><br>
+	 <p>Age:5</p><br>
+	 <p>Color:Black</p><br>
+
+        <form>
+            <input type="submit" Value="Check" onClick="DeepCopy()">
+        </form>
+        
+    </body>
+</html>
