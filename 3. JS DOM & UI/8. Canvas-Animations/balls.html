@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Animations Demo</title>
+	<style type="text/css">
+		#wrapper{
+			width:960px;
+			margin:0 auto;
+			text-align:center;
+		}
+	
+		#canvas-animations{
+			border:1px solid black;
+			border-radius:5px;
+		}
+		#controls{
+			width:650px;
+			margin:0 auto;
+			padding:0;
+			padding-top:10px;
+			text-align:center;
+		}
+
+		.button{
+			width:44%;
+			display:inline-block;
+			padding:5px 15px;
+			margin:0;
+			color:black;
+			border:1px solid black;
+			border-radius:5px;
+			text-decoration:none;
+			font-size:1.2em;
+		}
+		
+			.button:hover {
+				background:#ccc;
+			}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<canvas id="canvas-animations"
+		width="650" height="400"></canvas>
+		<br/>
+		<div id="controls">
+			<a href="#" class="button" id="btn-start-balls">Start</a>
+			<a href="#" class="button" id="btn-stop-balls">Stop</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="scripts/balls.js">
+	</script> 
+</body>
+</html>
