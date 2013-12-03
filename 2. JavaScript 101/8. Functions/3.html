@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 1</title>
+</head>
+<body>
+    <label for="input">Enter text: </label>
+    <input type="text" id="input"> <br>
+    <label for="word">Enter string: </label>
+    <input type="text" id="word"> <br>
+    <button onclick="onClickCount()">Count</button>
+    <div id="js-console"></div>
+    <script src="js-console/js-console.js"></script>
+    <script>
+    	function onClickCount() {
+			var counter = 0;
+			var wordLength = word.length;
+			var index = text.indexOf(word, index);
+			 
+			while (index != -1) {
+			        counter++;
+			        index += wordLength;
+			        index = text.indexOf(word, index);
+			}
+		}

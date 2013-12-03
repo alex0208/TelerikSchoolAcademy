@@ -30,7 +30,7 @@
 
 	1) stoynov		- done
 	2) ivo			- done
-	3) sasho
+	3) sasho		- done
 	4) tencho		- done
 	5) ryapov		- done
 	6) stoynov		- done
@@ -40,9 +40,9 @@
 
 	1) sasho		- done
 	2) tencho		- done
-	3) ryapov
+	3) ryapov		- done
 	4) stoynov		- done
-	5) ivo
+	5) ivo			- done
 	6) sasho		- done
 
 10. STRINGS
