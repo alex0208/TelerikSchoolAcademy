@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Exercise 1</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+		<input type="text" placeholder="input number of divs" id="input">
+		<button onclick="DrawDiv()">Draw</button>
+
+		<script>
+			function DrawDiv () {
+				
+				var numberDivs = parseInt($('#input').val(), 10);
+				for (var i = 0; i < numberDivs; i++) {
+					CreateDiv();
+				};
+
+				function CreateDiv () {
+					var color = 'rgba(' +
+						GetRandomValue(0, 255) + ',' +
+						GetRandomValue(0, 255) + ',' +
+						GetRandomValue(0, 255) + ',' +
+						GetRandomValue(1, 10) / 10 + ')';
+
+					$('<div/>', {
+     		  		text: 'div',
+     		  		height: GetRandomValue(20, 100) + 'px',
+     		  		width: GetRandomValue(20, 100) + 'px',
+     		  		// border-radius: GetRandomValue(0, 50) + '%',
+     		  		// background: 'rgba(' + [
+     		  		// 			GetRandomValue(0, 255) + ', ' +
+     		  		// 			GetRandomValue(0, 255) + ', ' +
+     		  		// 			GetRandomValue(0, 255) + ', ' +
+     		  		// 			GetRandomValue(1, 10) / 10 + ')'
+     		  		// 			],
+
+     		  		// 
+     		  		// background: 'black';
+
+					}).appendTo('body');
+					$('div').css('background', color);
+					// alert(color)
+				}
+				
+				function GetRandomValue (min, max) {
+					return Math.floor(Math.random() * (max - min + 1) + min);
+				}
+
+			}
+		</script>
+	</body>
+</html>

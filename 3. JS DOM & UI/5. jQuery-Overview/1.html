@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Slider</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        #wrapper {
+            position:relative;
+            width: 555px;
+            height: 350px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+        #wrapper button {
+            width:32px;
+            height:32px;            
+            margin-top: 120px;
+        }
+
+            #wrapper #prev {
+                background-image:url("images/left.jpg");
+                float:left;
+            }
+
+            #wrapper #next {
+                background-image:url("images/right.jpg");
+                float:right;
+            }
+
+        #slider {
+            position:relative;
+            height:300px;
+            margin-left:5px;
+            float:left;
+        }
+
+            #slider:after {
+                z-index:1;
+                content: "";
+                    display: block;
+                    clear: both;                    
+            }            
+
+        #slider div {
+            position:absolute;
+            width:480px;
+            height:270px;
+            background-color:#d7c1ee;
+            top:0px;
+            left:0px;
+            z-index:8;
+        }
+
+            #slider div.active {
+                z-index:10;
+            }
+
+            #slider div.last-active {
+                z-index:9;
+            }
+
+            #slider div p {
+                margin:5px;
+            }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <button id='prev'></button>
+        <div id="slider">
+            <div class="slide active"><img src="images/nature1-large.jpg" width="480px" height="270px" /></div>
+            <div class="slide"><img src="images/nature2-large.jpg" width="480px" height="270px" /></div>
+            <div class="slide"><img src="images/nature3-large.jpg" width="480px" height="270px" /></div>
+            <div class="slide"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+        </div>
+        <button id='next'></button>
+    </div>
+    <script>function slideShow() {
+    var active = $("#slider div.active");
+    if (active.length == 0) {
+        active = $("#slider div:last");
+    }
+
+    var next = active.next();
+    if (next.length == 0) {
+        next = $("#slider div:first");
+    }
+    next.css({ opacity: 0 });
+
+    active.addClass("last-active");
+    next.addClass("active").animate({ opacity: 1.0 }, 1000, function () {
+        active.removeClass("active last-active");
+    });
+}
+
+(function () {
+    var buttonPrev = $("button#prev");
+    var buttonNext = $("button#next");
+    var TIMEOUT = 3000;
+    var timer = null;
+
+    buttonPrev.on("click", function () {
+        clearInterval(timer);
+
+        var currElement = $("#slider div.active");
+        var prev = currElement.prev();
+        if (prev.length == 0) {
+            prev = $("#slider div:last");
+        }
+
+        currElement.removeClass("active");
+        prev.addClass("active");
+
+        timer = setInterval("slideShow()", TIMEOUT);
+    });
+
+    buttonNext.on("click", function () {
+        clearInterval(timer);
+
+        var currElement = $("#slider div.active");
+        var next = currElement.next();
+        if (next.length == 0) {
+            next = $("#slider div:first");
+        }
+
+        currElement.removeClass("active");
+        next.addClass("active");
+
+        timer = setInterval("slideShow()", TIMEOUT);
+    });
+
+    timer = setInterval("slideShow()", TIMEOUT);
+})();</script>
+</body>
+</html>

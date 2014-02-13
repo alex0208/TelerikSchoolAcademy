@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Exercise 1</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<div>div #1</div>
+			<div>div #2</div>
+			<nav>
+				<div>div #3</div>
+				<div>
+					div #4
+					<div>div #5</div>
+				</div>
+			</nav>
+			<div>div #6</div>
+		</div>
+   		<button onclick="onClickQuerySelectorAll()">querySelectorAll</button>
+   		<button onclick="onClickGetElementsByTagName()">getElementsByTagName</button>
+		<script>
+			function onClickQuerySelectorAll () {
+				var selectDiv = document.querySelectorAll('div > div');
+				Print(selectDiv);
+			}
+
+			// NOT WORKING
+			function onClickGetElementsByTagName () {
+				var divs = [];
+				var el = document.getElementsByTagName('div')[0];
+				for (var j = 0, lenj = el.children[0].children.length; j < lenj; j++) 
+				    if (el.children[0].children[j].nodeName === "DIV") 
+				        divs.push(el.children[0].children[j])
+					console.log(divs);
+				// Print (divs);
+			}
+
+			function Print (selectedItems) {
+				for (var i in selectedItems) {
+					console.log(selectedItems[i].innerHTML);
+				}	
+				
+			}
+		</script>
+	</body>
+</html>
