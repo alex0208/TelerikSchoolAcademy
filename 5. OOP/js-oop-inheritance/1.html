@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 1</title>
+</head>
+<body>
+    <p>School repository. Prototypal OOP Implementation</p>
+    <button onclick="testTask()">Execute test function</button>
+    <br>
+    <div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script src="schoolProto.js"></script>
+    <script>
+
+        function testTask(){
+
+            //var westHighSchool = new School("West High", "West Valley");
+
+            var alex = Object.create(Student);
+            alex.init("Alex", "Anderson", 12, "A");
+
+            var greet = alex.introduce();
+
+            var bob = Object.create(Student);
+            bob.init("Bob", "Banter", 13, "D");
+
+            var carl = Object.create(Student);
+            carl.init("Carl", "Marx", 12, "F");
+
+            var mrSmith = Object.create(Teacher);
+            mrSmith.init("Agent", "Smith", 55, "The Matrix");
+
+            var class7A = Object.create(SchoolClass);
+            class7A.init("7A", 5, [alex, bob, carl], mrSmith);
+
+            var school = Object.create(School);
+            school.init("West High", "West Valley");
+            school.classes.push(class7A);
+
+
+            // var bob = new Student("Bob", "Banter", "13", "D");
+            // var carl = new Student("Carl", "Marx", "11", "F");
+
+            // var mrSmith = new Teacher("Agent", "Smith", "55", "The Matrix");
+
+            // var class7A = new SchoolClass("7A", 5, [alex, bob, carl], mrSmith);
+
+            // westHighSchool.classes.push(class7A);
+
+            // var greeting = mrSmith.introduce();
+            // var response = alex.introduce();
+        }
+
+
+    </script>
+</body>
+</html>

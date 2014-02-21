@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 1</title>
+</head>
+<body>
+    <p>Test function creates four kinds of vehicles.</p>
+    <button onclick="testTask()">Execute test function</button>
+    <br>
+    <div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script src="vehicles.js"></script>
+    <script>
+
+
+
+		function testTask(){
+
+			var car = new LandVehicle(5);
+			var plane = new AirVehicle(100);
+			var submarine = new WaterVehicle(4, DirectionsEnum.clockwise);
+			var amphibiousCar = new AmphibiousVehicle(5, 4, DirectionsEnum.counter_clockwise);
+
+			car.accelerate();
+			plane.toggleAfterburner();
+			plane.accelerate();
+			submarine.accelerate();
+			submarine.switchSpinDirection();
+			submarine.accelerate();
+			amphibiousCar.accelerate();
+			amphibiousCar.waterMode.switchSpinDirection();
+			amphibiousCar.switchMode();
+			amphibiousCar.accelerate();
+			amphibiousCar.switchMode();
+			amphibiousCar.accelerate();
+		}
+
+
+    </script>
+</body>
+</html>

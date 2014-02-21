@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 2</title>
+</head>
+<body>
+    <p>Favourite sites bar. Classical OOP</p>
+    <button onclick="testTask()">Execute test function</button>
+    <ul id="favs"></ul>
+    <br>
+    <script src="favouritesBar.js"></script>
+    <script>
+
+        function testTask(){
+
+            var folders = [];
+            var links = ["www.google.com", "www.microsoft.com", "www.msdn.com", "www.yahoo.com", "www.bing.com"];
+            var titles = ["Google", "Microsoft Official Website", "Microsoft Developer Network", "Yahoo", "Bing"];
+            var urls = [];
+
+            for(var i = 0; i < 5; i++){
+                var url = Object.create(Url.prototype, {
+                    src : {writable: true, configurable : true, value : links[i]},
+                    title : {writable : true, configurable : true, value : titles[i]}
+                });
+                urls.push(url);
+            }
+
+            for(var i = 0; i < 3; i++){
+                var folder = Object.create(Folder.prototype, {
+                    urls : {writable : true, configurable : true, value : urls},
+                    title : {value : "Folder " + i}
+                });
+                folders.push(folder);
+            }
+
+            for(var i in folders){
+                folders[i].apply("favs");
+            }
+
+            for(var i in urls){
+                urls[i].apply("favs");
+            }
+        }
+
+
+    </script>
+</body>
+</html>

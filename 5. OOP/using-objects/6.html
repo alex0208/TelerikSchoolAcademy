@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 6</title>
+</head>
+<body>
+    <p>Test function creates an array of people objects with random ages and groups them by age, first name and last name. Press the button several times to see results change(for ages only, names are fixed). Make sure you check the source code after you run the test.</p>
+    <button onclick="testTask()">Execute test function</button>
+    <br>
+    <div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script>
+
+        function Person(fname, lname, age){
+            return{
+                firstName : fname,
+                lastName : lname,
+                age : age,
+                fullName : fname + " " + lname,
+                toString : function(){ return this.fullName + ", " + this.age }
+            }
+        }
+
+        function group(array, groupKey){
+            var groupedArray = [];
+            var key;
+            for (var i = array.length - 1; i >= 0; i--) {
+
+                key = array[i][groupKey].toString();
+
+                if(groupedArray[key] == undefined)
+                    groupedArray[key] = [];
+
+                groupedArray[key].push(array[i]);
+            };
+
+            return groupedArray;
+        }
+
+        function printGroups(groupedArray){
+             for(key in groupedArray){
+                jsConsole.writeLine("Group : " + key);
+
+                for (var i = 0; i < groupedArray[key].length; i++) {
+                    jsConsole.write(groupedArray[key][i].toString() + " ; "); 
+                };
+                jsConsole.writeLine();
+            }
+
+            jsConsole.writeLine();
+        }
+
+        function testTask(){
+
+            //generate random age
+            var age1 = Math.floor(Math.random()*3 + 20);
+            var age2 = Math.floor(Math.random()*3 + 20);
+            var age3 = Math.floor(Math.random()*3 + 20);
+            var age4 = Math.floor(Math.random()*3 + 20);
+
+            //create array of people
+            var peopleArray = [new Person("John", "Doe", age1), new Person("John", "Lawrence", age2), new Person("Jennifer", "Aniston", age3), new Person("Jennifer", "Lawrence", age4)];
+
+            var groupByAge = group(peopleArray, "age");
+            jsConsole.writeLine("AGE");
+            printGroups(groupByAge);
+
+
+            var groupByFirstName = group(peopleArray, "firstName");
+            jsConsole.writeLine("FIRST NAME");
+            printGroups(groupByFirstName);
+
+            var groupByLastName = group(peopleArray, "lastName");
+            jsConsole.writeLine("LAST NAME");
+            printGroups(groupByLastName);
+
+
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 5</title>
+</head>
+<body>
+    <p>Test function creates an array of people objects with random ages and finds the youngest. Press the button several times to see results change. Make sure you check the source code after you run the test.</p>
+    <button onclick="testTask()">Execute test function</button>
+    <br>
+    <div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script>
+
+        function Person(fname, lname, age){
+            return{
+                firstName : fname,
+                lastName : lname,
+                age : age,
+                fullName : fname + " " + lname
+            }
+        }
+
+        function findYoungest(people){
+
+            //define oldest person ever
+            var youngest = new Person("", "", 260);
+
+            //find youngest person
+            for (var i = people.length - 1; i >= 0; i--) {
+                if(people[i].age < youngest.age)
+                    youngest = people[i];
+            };
+
+            return youngest.fullName;
+        }
+
+        function testTask(){
+
+            //generate random age
+            var age1 = Math.floor(Math.random()*70 + 18);
+            var age2 = Math.floor(Math.random()*70 + 18);
+            var age3 = Math.floor(Math.random()*70 + 18);
+            var age4 = Math.floor(Math.random()*70 + 18);
+
+            //create array of people
+            var peopleArray = [new Person("John", "Doe", age1), new Person("Bai", "Ganio", age2), new Person("Ronnie", "O'Sullivan", age3), new Person("Jennifer", "Lawrence", age4)];
+
+            jsConsole.writeLine("Searching for the youngest one of : ");
+            for (var i = 0; i < peopleArray.length; i++) {
+                jsConsole.writeLine(peopleArray[i].fullName + ", " + peopleArray[i].age);
+            };
+
+            jsConsole.writeLine();
+
+
+            //find youngest person
+            jsConsole.writeLine("The youngest person is " + findYoungest(peopleArray));
+            jsConsole.writeLine();
+            jsConsole.writeLine();
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 1</title>
+</head>
+<body>
+    <p>Test function creates three points with random generated coordinates between -5 and 4  and three lines and checks if these lines can form a triangle. Make sure you press the button at least several time to see it work with different numbers.
+        Make sure you check the source code after you run the test</p>
+    <button onclick="testTask()">Execute test function</button>
+    <br>
+    <div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script>
+
+        function Point(x,y){
+            return{
+                x : x,
+                y : y,
+                toString : function () { return " (" + this.x + "," + this.y + ") "; },
+                distanceTo : function(point) { return Math.sqrt(Math.pow((point.x - this.x), 2) + Math.pow((point.y - this.y), 2)); }
+            }
+        }
+
+        function Line(start, end){
+            return{
+                length : function(){ return Math.sqrt(Math.pow((end.x - start.x), 2) + Math.pow((end.y - start.y), 2)); },
+                toString : function () { return " (" + start.toString() + "," + end.toString() + ") "; }
+            }
+        }
+
+        function canFormTriangle(a,b,c){
+            if(a.length() + b.length() > c.length() && a.length() + c.length() > b.length() && b.length() + c.length() > a.length())
+                return "Yes";
+            return "No";
+        }
+
+        function testTask(){
+
+            //generate random numbers for the coords
+            var x1 = Math.floor(Math.random()*10 - 5);
+            var x2 = Math.floor(Math.random()*10 - 5);
+            var x3 = Math.floor(Math.random()*10 - 5);
+            var y1 = Math.floor(Math.random()*10 - 5);
+            var y2 = Math.floor(Math.random()*10 - 5);
+            var y3 = Math.floor(Math.random()*10 - 5);
+
+            //create points
+            var A = new Point(x1,y1);
+            var B = new Point(x2,y2);
+            var C = new Point(x3,y3);
+
+            //create lines
+            var a = new Line(B,C);
+            var b = new Line(A,C);
+            var c = new Line(A,B);
+
+            //output data
+            jsConsole.writeLine("Points : ");
+            jsConsole.writeLine(A.toString() + B.toString() + C.toString());
+            jsConsole.writeLine();
+            jsConsole.writeLine("Distance between A and B without using a Line : ");
+            jsConsole.writeLine(A.distanceTo(B));
+            jsConsole.writeLine("Line length from A to B(should be the same) : ");
+            jsConsole.writeLine(c.length());
+            jsConsole.writeLine();
+            jsConsole.writeLine("Lines : ");
+            jsConsole.writeLine(a.toString() + b.toString() + c.toString());
+            jsConsole.writeLine();
+            jsConsole.writeLine("Can these lines form a triangle : ");
+            jsConsole.writeLine(canFormTriangle(a,b,c));
+            jsConsole.writeLine();
+            jsConsole.writeLine();
+        }
+
+    </script>
+</body>
+</html>

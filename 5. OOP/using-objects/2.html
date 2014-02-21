@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 2</title>
+</head>
+<body>
+    <p>Test function creates an array : ["1", 2, 4, 4, 1, 1, 3, 11, "11", 1] and removes 1. The element with index 0 will remain because it is a string.
+        Make sure you check the source code after you run the test</p>
+    <button onclick="testTask()">Execute test function</button>
+    <br>
+    <div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script>
+
+        
+
+        function testTask(){
+
+            //implement remove method
+            if(Array.prototype.remove == null)
+                Array.prototype.remove = function(value){
+                    for (var i = this.length - 1; i >= 0; i--) {
+                        if(this[i] === value)
+                            this.splice(i, 1);
+                    };
+                }
+
+            //create array
+            var arr = ["1", 2, 4, 4, 1, 1, 3, 11, "11", 1];
+
+            //print array
+            for (var i = 0; i < arr.length; i++) {
+                jsConsole.write(arr[i] + " ");
+            };
+            jsConsole.writeLine();
+
+            //remove 1s
+            arr.remove(1);
+
+            //print new array
+            jsConsole.writeLine("Removed 1, but numbers only");
+            for (var i = 0; i < arr.length; i++) {
+                jsConsole.write(arr[i] + " ");
+            };
+
+        }
+
+    </script>
+</body>
+</html>
