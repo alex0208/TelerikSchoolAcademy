@@ -33,15 +33,18 @@ function Slider(images, selector){
 	var nextButton = document.createElement("button");
 
 	prevButton.innerText = "Previous";
+	prevButton.id = "prev-button"
 	nextButton.innerText = "Next";
+	nextButton.id = "next-button";
 
 	prevButton.addEventListener("click", function(){self.selectPrevious();});
 	nextButton.addEventListener("click", function(){self.selectNext();});
 
+	document.onkeydown = self.toggleArrows;
+
 	sliderContainer.appendChild(list);
 	sliderContainer.appendChild(prevButton);
 	sliderContainer.appendChild(nextButton);
-
 
 
 	for(var index in images)
@@ -62,6 +65,19 @@ function Slider(images, selector){
 
 		list.appendChild(imageContainer);
 	}
+}
+
+Slider.prototype.toggleArrows = function(e){
+ 	e = e || window.event;
+
+    if (e.keyCode == '37') {
+        // left arrow
+        this.getElementById("prev-button").click();
+    }
+    else if (e.keyCode == '39') {
+        // right arrow
+        this.getElementById("next-button").click();
+    }
 }
 
 Slider.prototype.selectNext = function(){

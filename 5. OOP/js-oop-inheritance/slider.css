@@ -1,0 +1,28 @@
+.imageSlider{
+	overflow: auto;
+	white-space: nowrap;
+	overflow-y: hidden;
+	padding: 20px;
+}
+.imageSlider ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.imageSlider ul li{
+	display: inline-block;
+	margin-left: 20px;
+
+	border : 5px solid #900000 ;
+	outline: 5px solid #100000 ;
+
+	background-color: #900000 ;
+}
+
+li p{
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #100000 ;
+}

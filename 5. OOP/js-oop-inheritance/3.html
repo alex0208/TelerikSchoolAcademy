@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="styles/js-console.css" rel="stylesheet" />
     <title>Exercise 3</title>
 </head>
 <body>
-    <p>School repository. Prototypal OOP Implementation</p>
-    <button onclick="testTask()">Execute test function</button>
+    <p>Image Slider. Try your arrows</p>
     <br>
-    <div id="sliderContainer"></div>
+    <div id="sliderContainer" class="imageSlider"></div>
     <script src="slider.js"></script>
     <script>
 
         function testTask(){
             var images = [];
             for (var i = 1; i < 5; i++) {
-                var image = new Image("sample title" + i, "images/" + i + ".jpg", "images/" + i + "thumb.jpg");
+                var image = new Image("Image" + i, "images/" + i + ".jpg", "images/" + i + "thumb.jpg");
                 images.push(image);
             }
             var slider = new Slider(images, "sliderContainer");      
