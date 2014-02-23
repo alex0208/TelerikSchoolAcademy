@@ -30,6 +30,20 @@
 
             var greeting = mrSmith.introduce();
             var response = alex.introduce();
+
+            jsConsole.writeLine("Student introduce();");
+
+            var info = alex.introduce();
+            for(var prop in info){
+                jsConsole.writeLine(prop + " : " + info[prop]);
+            }
+
+            jsConsole.writeLine();
+            jsConsole.writeLine("Teacher introduce();");
+            var info = mrSmith.introduce();
+            for(var prop in info){
+                jsConsole.writeLine(prop + " : " + info[prop]);
+            }
         }
 
 

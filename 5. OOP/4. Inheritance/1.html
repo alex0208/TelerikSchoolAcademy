@@ -39,6 +39,22 @@
             school.init("West High", "West Valley");
             school.classes.push(class7A);
 
+            jsConsole.writeLine("Student introduce();");
+
+            var info = alex.introduce();
+            for(var prop in info){
+                if(info.hasOwnProperty(prop))
+                    jsConsole.writeLine(prop + " : " + info[prop]);
+            }
+
+            jsConsole.writeLine();
+            jsConsole.writeLine("Teacher introduce();");
+            var info = mrSmith.introduce();
+            for(var prop in info){
+                if(info.hasOwnProperty(prop))
+                    jsConsole.writeLine(prop + " : " + info[prop]);
+            }
+
 
             // var bob = new Student("Bob", "Banter", "13", "D");
             // var carl = new Student("Carl", "Marx", "11", "F");
