@@ -1,63 +1,39 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Exercise 3</title>
-        </style>
-    </head>
-    <body>
-        <script>
-            var specialConsole = module();
-            var point = {
-                x: 5,
-                y:3
-            };
-            specialConsole.writeLine("Message: Hello!");
-            specialConsole.writeLine("Message: {0}", "Hello!");
-            specialConsole.writeLine("This is the object Point: {0}", point);
-            specialConsole.writeError("Error: {0}", "Something happened");
-            specialConsole.writeWarning("Warning: {0}", "A warning");
-            function module() {
-                function writeLine() {
-                    for (var i = 0; i < arguments.length; i++) {
-                        arguments[i] = JSON.stringify(arguments[i]);
-                    }
-                    while (arguments[0].search(/{(\d)}/) != -1) {
-                        arguments[0].match(/{(\d)}/);
-                        var num = parseInt(RegExp.lastMatch.replace(/{(\d)}/, "$1"));
-                        arguments[0] = arguments[0].replace(/{(\d)}/, arguments[num + 1]);
-                    }
-                    console.log(arguments[0].toString());
-                }
-                function writeError() {
-                    for (var i = 0; i < arguments.length; i++) {
-                        arguments[i] = JSON.stringify(arguments[i]);
-                    }
-                    while (arguments[0].search(/{(\d)}/) != -1) {
-                        arguments[0].match(/{(\d)}/);
-                        var num = parseInt(RegExp.lastMatch.replace(/{(\d)}/, "$1"));
-                        arguments[0] = arguments[0].replace(/{(\d)}/, arguments[num + 1]);
-                    }
-                    console.error(arguments[0].toString());
-                }
-                function writeWarning() {
-                    for (var i = 0; i < arguments.length; i++) {
-                        arguments[i] = JSON.stringify(arguments[i]);
-                    }
-                    while (arguments[0].search(/{(\d)}/) != -1) {
-                        arguments[0].match(/{(\d)}/);
-                        var num = parseInt(RegExp.lastMatch.replace(/{(\d)}/, "$1"));
-                        arguments[0] = arguments[0].replace(/{(\d)}/, arguments[num + 1]);
-                    }
-                    console.warn(arguments[0].toString());
-                }
-                
-                return {
-                    writeLine: writeLine,
-                    writeError: writeError,
-                    writeWarning: writeWarning
-                }
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+    <title>Advanced Console</title>
+</head>
+<body>
+    <p>Advanced Console. Supports formatting of messages, errors and warnings.</p>
+    <button onclick="testTask()">Execute test function</button>
+    <br>
+    <script src="advanced-console.js"></script>
+    <script>
+
+        function testTask(){
+
+            var console = new Console();
+
+            console.writeLine("Simple message.");
+            console.writeLine("Simple {0} with {1}.", "message", "formatting");
+
+            console.writeError("Simple error!");
+            console.writeError("Simple {0} with {1}!", "error", "formatting");
+
+            console.writeWarning("Simple warning.");
+            console.writeWarning("{0} warning {1} formatting.", "Simple", "with");
+
+            var obj = {shape : "circle", color : "red", name : "baloon"};
+            obj.toString = function(){
+                return "The " + this.name + " is a " + this.color + " " + this.shape + ".";
             }
-        </script>
-    </body>
+            console.writeLine(obj);
+
+        }
+
+
+    </script>
+</body>
 </html>
