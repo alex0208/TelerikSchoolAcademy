@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="slider.css">
     <title>Exercise 3</title>
 </head>
 <body>
@@ -10,15 +11,12 @@
     <div id="sliderContainer" class="imageSlider"></div>
     <script src="slider.js"></script>
     <script>
-
-        function testTask(){
             var images = [];
             for (var i = 1; i < 5; i++) {
                 var image = new Image("Image" + i, "images/" + i + ".jpg", "images/" + i + "thumb.jpg");
                 images.push(image);
             }
             var slider = new Slider(images, "sliderContainer");      
-        }
     </script>
 </body>
 </html>
