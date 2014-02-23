@@ -19,11 +19,13 @@
 		function testTask(){
 
 			var car = new LandVehicle(5);
+			jsConsole.writeLine(car.toString());
 			var plane = new AirVehicle(100);
 			var submarine = new WaterVehicle(4, DirectionsEnum.clockwise);
 			var amphibiousCar = new AmphibiousVehicle(5, 4, DirectionsEnum.counter_clockwise);
 
 			car.accelerate();
+			jsConsole.writeLine(car.toString());
 			plane.toggleAfterburner();
 			plane.accelerate();
 			submarine.accelerate();
@@ -32,9 +34,11 @@
 			amphibiousCar.accelerate();
 			amphibiousCar.waterMode.switchSpinDirection();
 			amphibiousCar.switchMode();
+			jsConsole.writeLine(amphibiousCar.toString());
 			amphibiousCar.accelerate();
 			amphibiousCar.switchMode();
 			amphibiousCar.accelerate();
+			jsConsole.writeLine(amphibiousCar.toString());
 		}
 
 

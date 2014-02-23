@@ -3,9 +3,23 @@
 		counter_clockwise : "counter-clockwise"
 	};
 
+	function writeSpaces(n){
+		var spaces = "";
+		for(var i = 0; i < n; i++){
+			spaces += "&nbsp;";
+		}
+		return spaces;
+	}
+
 	function PropulsionUnit(acceleration, count){
 		this.acceleration = acceleration;
 		this.count = count;
+	}
+
+	PropulsionUnit.prototype.toString = function(spaces){
+		return writeSpaces(spaces) + "Type : " + this.constructor.name +"<br>" + 
+		writeSpaces(spaces) + "Acceleration : " + this.acceleration + "<br>" + 
+		writeSpaces(spaces) + "Count : " + this.count;
 	}
 
 	PropulsionUnit.prototype.getTotalAcceleration = function(){
@@ -21,9 +35,6 @@
 
 			PropulsionUnit.call(this, 2*Math.PI*radius, count);
 		}
-
-		Wheels.prototype.toString = function(){}
-
 
 		Nozzles.prototype = new PropulsionUnit();
 		Nozzles.prototype.constructor = Nozzles;
@@ -44,6 +55,13 @@
 	function Vehicle(startingSpeed, propulsionUnits){
 		this.speed = startingSpeed || 0;
 		this.propulsionUnits = propulsionUnits;
+	}
+
+	Vehicle.prototype.toString = function(specialPropulsion){
+		var propulsion = specialPropulsion|| this.propulsionUnits;
+		return 	"Type : " + this.constructor.name + 
+				"<br>Speed : " + this.speed + 
+				"<br>PropulsionUnits : <br>" + propulsion.toString(4) + "<br>";
 	}
 
 	Vehicle.prototype.accelerate = function(){
@@ -100,6 +118,10 @@
 
 			this.currentMode = this.landMode;
 			this.speed = this.currentMode.speed;
+		}
+
+		AmphibiousVehicle.prototype.toString = function(){
+			return Vehicle.prototype.toString.call(this, this.currentMode.propulsionUnits);
 		}
 
 		AmphibiousVehicle.prototype.switchMode = function(){
