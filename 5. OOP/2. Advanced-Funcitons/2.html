@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Exercise 2</title>
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <button id="create-circ-div">Create div with circular movement</button>
+            <button id="create-rect-div">Create div with rectangular movement</button>
+        </div>
+        <script>
+        	var movingShapes = (function () {
+            "use strict";
+            var wrapper = document.getElementById("wrapper");
+            var maxWidth = screen.width - 250;
+            var maxHeight = screen.height - 600;
+            var divs = [], increase = Math.PI * 2, radius = 80;
+            // This function spins the div
+            function spinDiv() {
+                for (var i = 0, len = divs.length; i < len; i++) {
+                    var x = radius * Math.cos(divs[i].angle) + divs[i].centerX;
+                    var y = radius * Math.sin(divs[i].angle) + divs[i].centerY;
+                    divs[i].style.left = x + "px";
+                    divs[i].style.top = y + "px";
+                    divs[i].angle += increase;
+                    divs[i].angle += 0.06;
+                        }
+            }
+            // This function checks on which side of the rectangular are we and moves the div
+            function rectDiv() {
+                for (var i = 0, len = divs.length; i < len; i++) {
+                    var dir = divs[i].movementDirection;
+                    var x = divs[i].currentX;
+                    var y = divs[i].currentY;
+                    var stX = divs[i].startX;
+                    var stY = divs[i].startY;
+                    if (dir === 1 && x < (stX + (radius * 2))) {
+                        divs[i].style.left = (x + 3) + "px";
+                        divs[i].currentX = x + 3;
+                        if (divs[i].currentX >= (stX + (radius * 2))) {
+                            divs[i].movementDirection = 2;
+                        }
+                    } else if (dir === 2 && y < (stY + (radius * 2))) {
+                        divs[i].style.top = (y + 3) + "px";
+                        divs[i].currentY = y + 3;
+                        if (divs[i].currentY >= (stY + (radius * 2))) {
+                            divs[i].movementDirection = 3;
+                        }
+                    } else if (dir === 3 && x > stX) {
+                        divs[i].style.left = (x - 3) + "px";
+                        divs[i].currentX = x - 3;
+                        if (divs[i].currentX <= stX) {
+                            divs[i].movementDirection = 4;
+                        }
+                    } else if (dir === 4 && y > stY) {
+                        divs[i].style.top = (y - 3) + "px";
+                        divs[i].currentY = y - 3;
+                        if (divs[i].currentY <= stY) {
+                            divs[i].movementDirection = 1;
+                        }
+                    }
+                }
+            }
+            // This function adds new div
+            function add(command) {
+	                var div = document.createElement("div");
+	                div.style.height = "30px";
+	                div.style.width = "30px";
+	                div.style.backgroundColor = generateRandomColor();
+	                div.style.color = generateRandomColor();
+	                div.style.border = "2px solid " + generateRandomColor();
+	                        div.style.borderRadius = "17px";
+	                div.style.fontSize = "20px";
+	                div.style.textAlign = "center";
+	                div.style.position = "absolute";
+	                var topPos = (Math.random() * maxHeight) + 200;
+	                div.style.top = topPos + "px";
+	                var left = (Math.random() * maxWidth) + 100;
+	                div.style.left = left + "px";
+	                switch (command) {
+	                    case "ellipse":
+	                        div.innerHTML = "C";
+	                        div.centerX = left;
+	                        div.centerY = (topPos + radius);
+	                        div.angle = 0;
+	                        break;
+	                    case "rect":
+	                        div.innerHTML = "R";
+	                        div.startX = left;
+	                        div.currentX = left;
+	                        div.startY = topPos;
+	                        div.currentY = topPos;
+	                        div.movementDirection = 1;
+	                        break;
+	                    default:
+	                        break;
+	                            }
+	                divs.push(div);
+	                wrapper.appendChild(div);
+	                // After the first div is added we start the movement
+	                if (divs.length === 1) {
+	                    setInterval(rectDiv, 1000 / 30);
+	                    setInterval(spinDiv, 1000 / 30);
+	                }
+	            }
+	            function generateRandomColor() {
+	                var red = (Math.random() * 256) | 0;
+	                var green = (Math.random() * 256) | 0;
+	                var blue = (Math.random() * 256) | 0;
+	                return "rgb(" + red + "," + green + "," + blue + ")";
+	            }
+	            return {
+	                add: add
+	            };
+	        })();
+
+	        var createCircDiv = document.getElementById("create-circ-div");
+	        createCircDiv.addEventListener("click", command = function(){ movingShapes.add("ellipse");}, false);
+	        var createRectDiv = document.getElementById("create-rect-div");
+	        createRectDiv.addEventListener("click", command = function () { movingShapes.add("rect"); }, false);
+        </script>
+    </body>
+</html>

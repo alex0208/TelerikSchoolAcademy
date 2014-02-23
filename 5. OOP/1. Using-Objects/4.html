@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../styles/js-console.css" rel="stylesheet" />
+    <title>Exercise 4</title>
+</head>
+<body>
+	<div id="js-console"></div>
+    <script src="../js-console/js-console.js"></script>
+    <script>
+    	var Person = {
+    		name: "Ivan",
+    		age: 35
+    	}
+
+    	var Chair = {
+    		color: "black",
+    		size: "big"
+
+    	}
+
+    	function hasProperty (obj, prop) {
+    		for (var i in obj) {
+    			if(i === prop){
+    				return true;
+    				break;
+    			}
+    		}
+			return false;
+    	}
+
+    	var studentProp = hasProperty(Person, "age");
+    	var chairProp = hasProperty(Chair, "age");
+
+    	jsConsole.writeLine(studentProp);
+        jsConsole.writeLine(chairProp);
+
+    </script>
+</body>
+</hmtl>
