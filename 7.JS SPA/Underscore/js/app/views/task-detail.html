@@ -1,0 +1,27 @@
+﻿<div>
+    <p>Details for task {{currentTask.id}}</p>
+    <ul>
+        <li id="student-{{student.id}}" ng-repeat="student in currentTask.students">
+            <p>{{student.name}} {{student.surname}}</p>
+            <!--<button ng-click="remove({{student.id}})">Remove</button>-->
+        </li>
+    </ul>
+
+    <button ng-click="sort()">Sort</button>
+
+    <form>
+        <fieldset>
+            <input ng-model="newStudent.name" type="text" name="name" placeholder="First name" />
+            <input ng-model="newStudent.surname" type="text" name="surname" placeholder="Surname" />
+            <input ng-model="newStudent.age" type="text" name="age" placeholder="Age" />
+            <input ng-model="newStudent.marks" type="text" name="marks" placeholder="Marks" />
+            <button ng-click="add()">Add</button>
+        </fieldset>
+    </form>
+
+    <ul>
+        <li ng-repeat="sortedStudent in currentTask.sortedStudents">
+            <p>{{sortedStudent.name}} {{sortedStudent.surname}}</p>
+        </li>
+    </ul>
+</div>
