@@ -1,0 +1,12 @@
+.selected{
+	display: block;
+	background-color: #abcabc;
+}
+
+.visible{
+	display: block;
+}
+
+.hidden{
+	display: none;
+}

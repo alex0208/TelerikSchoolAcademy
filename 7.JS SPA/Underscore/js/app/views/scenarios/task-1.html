@@ -1,0 +1,50 @@
+﻿<div class="col-lg-12">
+    <!--Task header-->
+    <h1>Task {{currentTask.id}}</h1>
+    <p class="lead">{{currentTask.task}}</p>
+    <p class="lead">{{currentTask.description}}</p>
+</div>
+
+<div class="col-lg-4">
+    <ul class="list-group">
+        <li class="list-group-item" id="student-{{student.id}}" ng-repeat="student in students">
+            <p>{{student.name}} {{student.surname}} ({{student.age}})</p>
+            <!--<button ng-click="remove({{student.id}})">Remove</button>-->
+        </li>
+    </ul>
+    <button ng-click="sort()" class="btn btn-primary">Sort</button>
+</div>
+
+<div class="col-lg-4">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="sortedStudent in sortedStudents">
+            <p>{{sortedStudent.surname}} {{sortedStudent.name}} ({{sortedStudent.age}})</p>
+        </li>
+    </ul>
+</div>
+
+<div class="col-lg-4">
+    <form action="" class="form-horizontal">
+        <fieldset>
+            <legend>New Student</legend>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10"><input ng-model="newStudent.name" type="text" class="form-control" name="name"></div>
+            </div>
+            <div class="form-group">
+                <label for="surname" class="col-lg-2 control-label">Surname</label>
+                <div class="col-lg-10"><input ng-model="newStudent.surname" type="text" class="form-control" name="surname"></div>
+            </div>
+            <div class="form-group">
+                <label for="age" class="col-lg-2 control-label">Age</label>
+                <div class="col-lg-10"><input ng-model="newStudent.age" type="text" class="form-control" id="age"></div>
+            </div>
+            <div class="form-group">
+                <label for="marks" class="col-lg-2 control-label">Marks</label>
+                <div class="col-lg-10"><input ng-model="newStudent.marks" type="text" class="form-control" name="marks"></div>
+            </div>
+
+            <button ng-click="add()" class="btn btn-primary pull-right">Add</button>
+        </fieldset>
+    </form>
+</div>

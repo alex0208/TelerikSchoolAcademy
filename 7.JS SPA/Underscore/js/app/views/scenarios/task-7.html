@@ -1,0 +1,44 @@
+﻿<div class="col-lg-12">
+    <!--Task header-->
+    <h1>Task {{currentTask.id}}</h1>
+    <p class="lead">{{currentTask.task}}</p>
+    <p class="lead">{{currentTask.description}}</p>
+</div>
+
+<div class="col-lg-4">
+    <ul class="list-group">
+        <li class="list-group-item" id="animal-{{animal.name}}" ng-repeat="person in people">
+            <p>{{person.name}} {{person.surname}}.</p>
+            <!--<button ng-click="remove({{student.id}})">Remove</button>-->
+        </li>
+    </ul>
+    <button ng-click="findMostCommonNames()" class="btn btn-primary">Which are the most common names</button>
+</div>
+
+<div class="panel panel-info col-lg-4" ng-show="mostCommonNameFound">
+    <div class="panel-heading">
+        <h3 class="panel-title">The most common name is</h3>
+    </div>
+    <div class="panel-body">
+        First name: {{mostCommonName}}<br>
+        Surname: {{mostCommonSurname}}
+    </div>
+</div>
+
+<div class="col-lg-4 pull-right">
+    <form action="" class="form-horizontal">
+        <fieldset>
+            <legend>New Person</legend>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10"><input ng-model="new.name" type="text" class="form-control" name="name"></div>
+            </div>
+            <div class="form-group">
+                <label for="surname" class="col-lg-2 control-label">Surname</label>
+                <div class="col-lg-10"><input ng-model="new.surname" type="text" class="form-control" name="surname"></div>
+            </div>
+
+            <button ng-click="add()" class="btn btn-primary pull-right">Add</button>
+        </fieldset>
+    </form>
+</div>

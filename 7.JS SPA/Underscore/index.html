@@ -1,0 +1,26 @@
+<html ng-app="application">
+<head>
+    <title>require-ng</title>
+    <script type="text/javascript" src="js/lib/require/require.js" data-main="js/main"></script>
+
+    <link rel="stylesheet" type="text/css" href="js/lib/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h1>Underscore</h1>
+        <ul class="pagination">
+            <li ng-repeat="task in tasks">
+                <a href="#/task-{{task.id}}">{{task.id}}</a>
+                <!--<p>{{task.task}}</p>-->
+            </li>
+        </ul>
+
+    </div>
+
+    <!--Task content-->
+    <div ng-view>
+
+    </div>
+</body>
+</html>
