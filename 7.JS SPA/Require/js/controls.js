@@ -4,6 +4,10 @@ define(['mustache'],
         function ComboBox(collection) {
             this.data = collection;
             this.selectedIndex = 0;
+<<<<<<< HEAD
+=======
+            this.isExpanded = false;
+>>>>>>> 7f5b9e1c5c229cb4a097f423c07a5ac8e6b35e2e
         }
 
         function ComboBoxFactory(collection) {
@@ -60,24 +64,47 @@ define(['mustache'],
 
                 event.preventDefault();
 
+<<<<<<< HEAD
                 if ($(this).hasClass('selected')) {
                     //expand the list
                     //$(this).removeClass('selected');
+=======
+                if ($(this).hasClass('selected') && !self.isExpanded) {
+                    //expand the list
+                    //$(this).removeClass('selected');
+                    self.isExpanded = true;
+>>>>>>> 7f5b9e1c5c229cb4a097f423c07a5ac8e6b35e2e
                     $('.list-group-item').removeClass('hidden').addClass('visible');
 
                     document.dispatchEvent(self.expand);
                 }
                 //the element is visible but not selected
+<<<<<<< HEAD
                 else if ($(this).hasClass('visible') && !($(this).hasClass('selected'))) {
                     //select the element
                     var previousSelected = $('.selected:first').removeClass('selected');
                     dispatchSelectionChangedEvent(previousSelected, $(this));
                     document.dispatchEvent(self.selectionChanged);
 
+=======
+                else if ($(this).hasClass('visible') && self.isExpanded) {
+                    //select the element
+                    var previousSelected = $('.selected:first');
+                    dispatchSelectionChangedEvent(previousSelected, $(this));
+                    document.dispatchEvent(self.selectionChanged);
+
+                    previousSelected.removeClass('selected');
+
+>>>>>>> 7f5b9e1c5c229cb4a097f423c07a5ac8e6b35e2e
                     $(this).addClass('selected')
                         .removeClass('visible');
 
                     //collapse the list
+<<<<<<< HEAD
+=======
+                    self.isExpanded = false;
+
+>>>>>>> 7f5b9e1c5c229cb4a097f423c07a5ac8e6b35e2e
                     $('.visible').toggleClass('hidden');
                     document.dispatchEvent(self.collapse);
 
