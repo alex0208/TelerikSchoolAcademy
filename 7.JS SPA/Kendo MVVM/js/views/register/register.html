@@ -1,0 +1,14 @@
+<form class=form-horizontal onsubmit="return false;">
+	<fieldset>
+            <legend>New User</legend>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10"><input data-bind="value: user.name" type="text" class="form-control" name="name"></div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10"><input data-bind="value: user.password" type="password" class="form-control" name="password"></div>
+            </div>
+            <button data-bind="events:{ click : register}" class="btn btn-primary pull-right">Register</button>
+        </fieldset>
+</form>

@@ -1,0 +1,34 @@
+<div id="wrapper">
+	<header>
+		<nav>
+			<ul>
+				<li><a href="\#/">Home</a></li>
+				<li data-bind="visible: user"><a href="\#/images">Images</a></li>
+				<li data-bind="visible: user"><a href="\#/add-image">New Image</a></li>
+				<li data-bind="text: user.name,	visible: user"></li>
+				<li data-bind="invisible: user"><a href="\#/register">Register</a></li>
+				<li data-bind="visible: user"><button data-bind="events: {click : logout}">Logout</button></li>
+			</ul>
+		</nav>
+		<form class=form-horizontal data-bind="invisible: user" onsubmit="return false;">
+			<fieldset>
+		            <legend>Login</legend>
+		            <div class="form-group">
+		                <label for="name" class="col-lg-2 control-label">Name</label>
+		                <div class="col-lg-10"><input data-bind="value: loginInfo.name" type="text" class="form-control" name="name"></div>
+		            </div>
+		            <div class="form-group">
+		                <label for="password" class="col-lg-2 control-label">Password</label>
+		                <div class="col-lg-10"><input data-bind="value: loginInfo.password" type="password" class="form-control" name="password"></div>
+		            </div>
+		            <button data-bind="events:{ click : login}" class="btn btn-primary pull-right">Login</button>
+		        </fieldset>
+		</form>
+	</header>
+
+	<div id="page"></div>
+
+	<footer>
+		<p>Images App Copyright 2014</p>
+	</footer>
+</div>

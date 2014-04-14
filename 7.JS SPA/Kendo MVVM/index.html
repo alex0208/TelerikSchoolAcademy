@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Kendo MVVM Images</title>
+		<link rel="stylesheet" href="js/lib/kendo/styles/kendo.common.min.css">
+		<link rel="stylesheet" href="js/lib/kendo/styles/kendo.default.min.css">
+		<script id="image-item-template" type="text/x-kendo-template">
+			<li>
+				<img data-bind="attr: {src: url, alt: title}">
+				<p data-bind="text: title"></p>
+			</li>
+		</script>
+	</head>
+	<body>
+		<div id="root"></div>
+
+		<script type="text/javascript" src="js/lib/jquery/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/lib/require/require.js" data-main="js/main"></script>
+
+
+	</body>
+</html>
